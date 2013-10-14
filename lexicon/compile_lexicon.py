@@ -15,8 +15,8 @@ lexicon = codecs.open(os.path.join(sys.path[0],'lexicon'),'w', encoding='UTF-8')
 
 sublexica = [('adj.irreg.lex', 'ADJ'),
              ('adpositions.closed.lex', 'OTHER'),
-             ('nouns.irreg.lex', 'NN'),
-             ('verbs.irreg.lex', 'V')]
+             ('verbs.irreg.lex', 'V'),
+             ('adv.irreg.lex', 'ADV')]
 
 tag_extract = re.compile('<[^<>]+>')
 
@@ -57,5 +57,11 @@ for line in prefixes:
 # Wiktionary lexicon
 xml_transform = Popen(['xsltproc', os.path.join(sys.path[0], 'lexicon-transform.xslt'), os.path.join(sys.path[0], 'wiki-lexicon.xml')], stdout=PIPE)
 align = Popen(['python', os.path.join(sys.path[0], 'align.py')], stdin=xml_transform.stdout, stdout=lexicon)
+align.wait()
+
+# Irregular nouns
+xml_transform = Popen(['xsltproc', os.path.join(sys.path[0], 'lexicon-transform.xslt'), os.path.join(sys.path[0], 'nouns.irreg.xml')], stdout=PIPE)
+align = Popen(['python', os.path.join(sys.path[0], 'align.py')], stdin=xml_transform.stdout, stdout=lexicon)
+align.wait()
 
 lexicon.close()

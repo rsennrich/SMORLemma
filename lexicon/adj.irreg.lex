@@ -31,6 +31,7 @@ gesund<Adj$e>
 % ==============================================================================
 
 hoch<AdjPos>
+hoc:<>h<AdjPos>
 ho:öc:<>h<AdjComp>
 ho:öch<AdjSup>
 

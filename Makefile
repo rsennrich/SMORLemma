@@ -36,7 +36,7 @@ smor-gen.a: smor.a
 
 simple-morph.a: phon.a elim-disj.a simple-lexicon
 
-lexicon/lexicon: lexicon/adj.irreg.lex lexicon/adpositions.closed.lex lexicon/nouns.irreg.lex lexicon/verbs.irreg.lex lexicon/affix.lex lexicon/compile_lexicon.py
+lexicon/lexicon: lexicon/adj.irreg.lex lexicon/adpositions.closed.lex lexicon/nouns.irreg.xml lexicon/verbs.irreg.lex lexicon/affix.lex lexicon/compile_lexicon.py lexicon/wiki-lexicon.xml
 	python lexicon/compile_lexicon.py
 
 %.a: %.fst
@@ -51,10 +51,6 @@ install: $(INST_TARGETS)
 archive:
 	tar -zcf VERSION-`date '+%y%m%d'`.tar.gz Makefile *.fst *.perl \
 	*lexicon
-
-
-Makefile: *.fst
-	-makedepend -Y -o.a $(SOURCES) 2>/dev/null 
 
 
 # DO NOT DELETE

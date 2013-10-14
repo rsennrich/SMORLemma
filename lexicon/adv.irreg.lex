@@ -1,10 +1,15 @@
 % ==============================================================================
-% simplex irregular nouns
-% encoded by: Peter Adolphs
+% adverbs with comparative/superlative forms
 % ==============================================================================
 
-<Head>Tochter<NFem_0_$>
-<Head>Mutter<NFem_0_$>
-<Head>Floß<NNeut_es_$e>
-<Head>Kloster<NNeut_s_$>
+bald<Adv>
+eher<Adv>
+ehesten<Adv>
 
+wohl<Adv>
+wohler<Adv>
+wohlsten<Adv>
+
+oft<Adv>
+öfter<Adv>
+öftesten<Adv>

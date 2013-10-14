@@ -7,7 +7,7 @@ import re
 import codecs
 
 epsilon=re.compile("0")
-replacement=re.compile("[@A-Za-zäöüßÄÖÜ0éè\.]+:[@A-Za-zäöüßÄÖÜ0éè\.]+")
+replacement=re.compile("(?iu)[@\w\.]+:[@\w\.]+", )
 
 def align(w1,w2):
     w1_len=len(w1)
