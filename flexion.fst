@@ -79,6 +79,12 @@ $N_es_\$e$ =                $NSg_es$ |\
 $N_es_\$er$ =               $NSg_es$ |\
                 {}:{<UL>er} $NPl_0$
 
+$N_es_er$ =               $NSg_es$ |\
+                {}:{er}     $NPl_0$
+
+$N_s_\$e$ =                $NSg_s$ |\
+              {<>}:{<UL>e} $NPl_0$
+
 $N_es_e$ =                  $NSg_es$ |\
                 {}:{<FB>e}  $NPl_0$
 
@@ -219,6 +225,12 @@ $NMasc_es_\$e$ =        {<+NN><Masc>}:{}  $N_es_\$e$
 
 %  Gott-(e)s/Götter
 $NMasc_es_\$er$ =       {<+NN><Masc>}:{}  $N_es_\$er$
+
+% Tenor-s/Tenöre
+$NMasc_s_\$e$  =   {<+NN><Masc>}:{<>}  $N_s_\$e$
+
+% Geist-(e)s/Geister
+$NMasc_es_er$ =         {<+NN><Masc>}:{<>}      $N_es_er$
 
 %  Fleck-(e)s/Flecken
 $NMasc_es_en$ =         {<+NN><Masc>}:{}  $N_es_en$
@@ -1174,7 +1186,9 @@ $FLEXION$ = <>:<Abk_ADJ>        $Abk_ADJ$ |\
             <>:<NMasc_en_en=in> $NMasc_en_en=in$ |\
             <>:<NMasc_en_en>    $NMasc_en_en$ |\
             <>:<NMasc_es_$e>    $NMasc_es_\$e$ |\
+            <>:<NMasc_s_$e>     $NMasc_s_\$e$ |\
             <>:<NMasc_es_$er>   $NMasc_es_\$er$ |\
+            <>:<NMasc_es_er>    $NMasc_es_er$ |\
             <>:<NMasc_es_e>     $NMasc_es_e$ |\
             <>:<NMasc_es_en>    $NMasc_es_en$ |\
             <>:<NMasc_n_n=$in>  $NMasc_n_n=\$in$ |\
@@ -1398,7 +1412,9 @@ $FLEXFILTER$ = .* (<Abk_ADJ>:<>        <Abk_ADJ>:<> |\
                    <NMasc_en_en=in>:<> <NMasc_en_en=in>:<> |\
                    <NMasc_en_en>:<>    <NMasc_en_en>:<> |\
                    <NMasc_es_$e>:<>    <NMasc_es_$e>:<> |\
+                   <NMasc_s_$e>:<>     <NMasc_s_$e>:<> |\
                    <NMasc_es_$er>:<>   <NMasc_es_$er>:<> |\
+                   <NMasc_es_er>:<>    <NMasc_es_er>:<> |\ 
                    <NMasc_es_e>:<>     <NMasc_es_e>:<> |\
                    <NMasc_es_en>:<>    <NMasc_es_en>:<> |\
                    <NMasc_n_n=$in>:<>  <NMasc_n_n=$in>:<> |\
