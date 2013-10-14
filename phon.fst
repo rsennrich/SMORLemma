@@ -22,24 +22,21 @@
 ALPHABET = [#char# #phon-trigger# #phon-trigger3#] \
 	<n>:[nlmrn] <d>:[dfgklnpst] <~n>:[<>n]
 
-$R1$ =  (. |\
-	<n>:n <CB> [ac-knoqs-zäöüßAC-KNOQS-ZÄÖÜ] |\
-	<n>:l <CB> [Ll] |\
-	<n>:m <CB> [BbMmPp] |\
-	<n>:[rn] <CB> [Rr] |\
-        <d>:d <CB> [a-ehijmoqru-xäöüßA-EHIJMOQRU-XÄÖÜ] |\
-        <d>:f <CB> [Ff] |\
-        <d>:g <CB> [Gg] |\
-        <d>:k <CB> [Kk] |\
-        <d>:l <CB> [Ll] |\
-        <d>:n <CB> [Nn] |\
-        <d>:p <CB> [Pp] |\
-        <d>:s <CB> [Ss] |\
-        <d>:t <CB> [Tt] |\
-       <~n>:<><CB> [bcdfghjklmnpqrstvwxyz] |\
-       <~n>:n <CB> [AEIOUÄÖÜaeiouäöü] |\
-       <e>. <FB> <er>:<> |\
-       [a-zäöüß]. <FB> {<er>}:{er}) *
+$R1$ =  (<n> <=> n (<CB>? [ac-knoqs-zäöüßAC-KNOQS-ZÄÖÜ])) &\
+	(<n> <=> l (<CB>? [Ll])) &\
+	(<n> <=> m (<CB>? [BbMmPp])) &\
+	(<n> <=> [rn] (<CB>? [Rr])) &\
+        (<d><=>d (<CB>? [a-ehijmoqru-xäöüßA-EHIJMOQRU-XÄÖÜ])) &\
+        (<d><=>f (<CB>? [Ff])) &\
+        (<d><=>g (<CB>? [Gg])) &\
+        (<d><=>k (<CB>? [Kk])) &\
+        (<d><=>l (<CB>? [Ll])) &\
+        (<d><=>n (<CB>? [Nn])) &\
+        (<d><=>p (<CB>? [Pp])) &\
+        (<d><=>s (<CB>? [Ss])) &\
+        (<d><=>t (<CB>? [Tt])) &\
+       (<~n><=><> (<CB>? [bcdfghjklmnpqrstvwxyz])) &\
+       (<~n><=>n (<CB>? [AEIOUÄÖÜaeiouäöü]))
 
 
 %**************************************************************************
