@@ -10,5 +10,5 @@
 $MORPH$ = "<morph2.a>"
 
 % capitalise the first character
-<CAP>:<> $MORPH$ || <NoHy>:<>? [a-zà-þ]:[A-ZÀ-Þ] [#char#]*
+<CAP>:<> $MORPH$ || <NoHy>:<>? [a-zÃ -Ã¾]:[A-ZÃ€-Ãž] [#char#]*
 

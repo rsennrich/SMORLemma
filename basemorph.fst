@@ -82,7 +82,7 @@ $Suffs2$ = ($X$ $PrefDerivSuffixes$ ($X$ $SuffDerivSuffixes$)*)?
 % suffixes for "Dreifarbigkeit"
 $QSuffs$ = $X$ $QuantSuffixes$ ($X$ $SuffDerivSuffixes$)*
 
-% dreistündig, 3stündig, 3-stündig, Mehrfarbigkeit, Vierfarbdrucker
+% dreistÃ¼ndig, 3stÃ¼ndig, 3-stÃ¼ndig, Mehrfarbigkeit, Vierfarbdrucker
 $NounCompStems$ = $BDKStems$ || $NounCompFilter$
 $Sx$ = $BDKStems$ $QSuffs$ ||  "<sufffilter.a>"
 $Sx$ = $NumPref$ $X$ ($Sx$ | $NounCompStems$)

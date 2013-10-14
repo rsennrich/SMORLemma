@@ -12,14 +12,14 @@
 
 $TMP$ = [#tmp# <Pro> <Prfl> <WeakGen><CAP>]:<>*
 
-$Pro_Stems$ = "pro-lexicon" || [A-ZÄÖÜa-zäöüß]+ $TMP$
+$Pro_Stems$ = "pro-lexicon" || [A-ZÃ„Ã–Ãœa-zÃ¤Ã¶Ã¼ÃŸ]+ $TMP$
 
 
 % insertion of additional features in the analysis
 
 $TMP$ = ([#tmp#] | [<Attr><Subst>]:<Pro> | [<Pers><Refl>]:<Prfl>)*\
 
-$Pro_Stems$ = [A-ZÄÖÜa-zäöüß]+ <CAP>? {<PRO><base><X>}:{} $TMP$ || $Pro_Stems$
+$Pro_Stems$ = [A-ZÃ„Ã–Ãœa-zÃ¤Ã¶Ã¼ÃŸ]+ <CAP>? {<PRO><base><X>}:{} $TMP$ || $Pro_Stems$
 
 
 % elimination of spurious ambiguities
@@ -28,4 +28,4 @@ $TMP$ = [#tmp# <WeakGen> <CAP><PRO><base><X>]:<>*
 
 ALPHABET = $Pro_Stems$
 
-$Pro_Stems$ = $Pro_Stems$ & ([A-ZÄÖÜa-zäöüß]:. | .:[A-ZÄÖÜa-zäöüß])+ $TMP$
+$Pro_Stems$ = $Pro_Stems$ & ([A-ZÃ„Ã–Ãœa-zÃ¤Ã¶Ã¼ÃŸ]:. | .:[A-ZÃ„Ã–Ãœa-zÃ¤Ã¶Ã¼ÃŸ])+ $TMP$

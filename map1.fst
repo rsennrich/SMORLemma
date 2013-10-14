@@ -29,10 +29,10 @@ ALPHABET = [#char# #category# #stemtype# #cap-trigger# #orth-trigger#] \
   <simplex,suffderiv><frei,gebunden,nativ><frei,fremd,gebunden,nativ>]
 
 $MAP1$ = (. | {er}:{<er>} |\
-	<PREF> <ADJ>:<>  <X>:<> [a-zäöüßA-ZÄÖÜ]+ <ADJ> |\
-	<PREF> <NPROP>:<><X>:<> [a-zäöüßA-ZÄÖÜ]+ <NPROP> |\
-	<PREF> <NN>:<>   <X>:<> [a-zäöüßA-ZÄÖÜ]+ <NN> |\
-	[<VPART><VPREF>] <V>:<><X>:<> <>:<ge>? [a-zäöüßA-ZÄÖÜ])* |\
+	<PREF> <ADJ>:<>  <X>:<> [a-zÃ¤Ã¶Ã¼ÃŸA-ZÃ„Ã–Ãœ]+ <ADJ> |\
+	<PREF> <NPROP>:<><X>:<> [a-zÃ¤Ã¶Ã¼ÃŸA-ZÃ„Ã–Ãœ]+ <NPROP> |\
+	<PREF> <NN>:<>   <X>:<> [a-zÃ¤Ã¶Ã¼ÃŸA-ZÃ„Ã–Ãœ]+ <NN> |\
+	[<VPART><VPREF>] <V>:<><X>:<> <>:<ge>? [a-zÃ¤Ã¶Ã¼ÃŸA-ZÃ„Ã–Ãœ])* |\
 	<>:<Prefix> (<PREF>|.)* <PREF>[<ADJ><NPROP><NN>] .* |\
 	<>:<Prefix> (.* <VPART>:<PREF><V>:<><X>:<>)* .* <VPART>:<PREF><V> .*|\
 	<>:{<Prefix><no-ge>} .* <VPREF>:<PREF><V> .* |\
@@ -42,7 +42,7 @@ $MAP1$ = (. | {er}:{<er>} |\
 #POS# = <NN><V><ADJ><NPROP><CARD>
 #=POS# = #POS#
 $POS$ = [#POS#]
-#L# = A-ZÄÖÜa-zäöüß
+#L# = A-ZÃ„Ã–Ãœa-zÃ¤Ã¶Ã¼ÃŸ
 $L$ = [#L#]
 $W$ = $L$+
 

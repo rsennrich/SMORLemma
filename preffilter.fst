@@ -26,7 +26,7 @@ $NS$ = [<nativ> #Nom-class#]
 
 % prefixes like "ver" delete the <ge> marker and generate a pseudo stem.
 % A following uppercase character is turned to lowercase.
-$GE$ = <Stem>:<> <ge>:<>? [A-ZÄÖÜ]:[a-zäöü]? [a-zäöüß]
+$GE$ = <Stem>:<> <ge>:<>? [A-ZÃ„Ã–Ãœ]:[a-zÃ¤Ã¶Ã¼]? [a-zÃ¤Ã¶Ã¼ÃŸ]
 
 $FILTER$ = \
 (<Prefix>:<Stem> <no-ge>:<> [#char# #surface-trigger# #ss-trigger# <^Ax><I>]* \

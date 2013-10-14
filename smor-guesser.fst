@@ -33,7 +33,7 @@ $ANY$ = [#char# #orth-trigger# #ss-trigger# #surface-trigger# <FB><CB><VPART> \
 
 $MORPH$ = $TMP$ <X>:<> $FLEXION$ || $ANY$ $FLEXFILTER$ || "<infixfilter.a>"
 
-$ANY$ = [A-ZִײÜ][A-ZִײÜa-zהצüבאיטףעתשß\-]* [A-ZִײÜa-zהצüבאיטףעתשß]
+$ANY$ = [A-Zֳ„ֳ–ֳ][A-Zֳ„ֳ–ֳa-zֳ₪ֳ¶ֳ¼ֳ¡ֳ ֳ©ֳ¨ֳ³ֳ²ֳ÷ֳ¹ֳ\-]* [A-Zֳ„ֳ–ֳa-zֳ₪ֳ¶ֳ¼ֳ¡ֳ ֳ©ֳ¨ֳ³ֳ²ֳ÷ֳ¹ֳ]
 
 $MORPH$ = $ANY$ <>:<CB> $MORPH$
 
@@ -51,8 +51,8 @@ $MORPH$ = <GUESSER>:<WB> $MORPH$ <>:<WB> || $PHON$
 ALPHABET = [#char# #stemtype# #feature# <VPREF><VPART><QUANT><X><F><Old>]
 
 <GUESSER> (.* \-)? (\
-  [A-Zְ-Ý] [A-Zְ-Ýa-zא-‎]* <>:<UC> |\
-  [a-zא-‎]+ <>:<LC> |\
-  [a-zא-‎]:[A-Zְ-Ý] [a-zא-‎]* <>:<CAP> |\
-  [A-Zְ-Ý][A-Zְ-Ý]+ [a-zא-‎]* <>:<CAP> |\
-  [A-Zְ-Ý]:[a-zא-‎] [a-zא-‎]* <>:<DECAP>)? .* || $MORPH$
+  [A-Zֳ€-ֳ] [A-Zֳ€-ֳa-zֳ -ֳ½]* <>:<UC> |\
+  [a-zֳ -ֳ½]+ <>:<LC> |\
+  [a-zֳ -ֳ½]:[A-Zֳ€-ֳ] [a-zֳ -ֳ½]* <>:<CAP> |\
+  [A-Zֳ€-ֳ][A-Zֳ€-ֳ]+ [a-zֳ -ֳ½]* <>:<CAP> |\
+  [A-Zֳ€-ֳ]:[a-zֳ -ֳ½] [a-zֳ -ֳ½]* <>:<DECAP>)? .* || $MORPH$

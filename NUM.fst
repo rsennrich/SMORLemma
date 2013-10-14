@@ -13,10 +13,10 @@
 %          Cardinals                             %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-$CardStem/2-9$ = zw(ei|o) | drei | vier | fünf | sechs | sieben | acht | neun
-$NumStem/11-19$ = elf | zwölf | (drei|vier|fünf|sech|sieb|acht|neun)zehn
+$CardStem/2-9$ = zw(ei|o) | drei | vier | fÃ¼nf | sechs | sieben | acht | neun
+$NumStem/11-19$ = elf | zwÃ¶lf | (drei|vier|fÃ¼nf|sech|sieb|acht|neun)zehn
 $NumStem/10-19$ = zehn | $NumStem/11-19$
-$NumStem/20-90$ = dreißig | (zwan|vier|fünf|sech|sieb|acht|neun)zig
+$NumStem/20-90$ = dreiÃŸig | (zwan|vier|fÃ¼nf|sech|sieb|acht|neun)zig
 
 $Card/2-99$ = \
 	$CardStem/2-9$ |\
@@ -60,7 +60,7 @@ $CardBase1$ = (ein | $Card/101-999901$) s:<>
 %         Ordinals                               %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-$OrdStem/3-9$ = dritt | viert | fünft | sechst | sieb(en)?t | acht | neunt
+$OrdStem/3-9$ = dritt | viert | fÃ¼nft | sechst | sieb(en)?t | acht | neunt
 $OrdStem/1-9$ = erst | zweit | $OrdStem/3-9$
 
 $Ord/3-99$ = ( \
@@ -81,7 +81,7 @@ $Ord/3-999999$ = ( \
 	(ein | $Card/2-999$)? tausendst |\
 	(ein | $Card/2-999$)? tausend (und)? $Ord/1-999$ )
 
-$Ord/mill$ = (ein | zehn | elf | zwölf | $CardStem/2-9$)? [mb]illi(on|ard)st
+$Ord/mill$ = (ein | zehn | elf | zwÃ¶lf | $CardStem/2-9$)? [mb]illi(on|ard)st
 
 $Ord0$ = nullt | erst | zweit | $Ord/3-999999$ | $Ord/mill$
 

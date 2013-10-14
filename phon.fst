@@ -23,11 +23,11 @@ ALPHABET = [#char# #phon-trigger# #phon-trigger3#] \
 	<n>:[nlmrn] <d>:[dfgklnpst] <~n>:[<>n]
 
 $R1$ =  (. |\
-	<n>:n <CB> [ac-knoqs-z‰ˆ¸ﬂAC-KNOQS-Zƒ÷‹] |\
+	<n>:n <CB> [ac-knoqs-z√§√∂√º√üAC-KNOQS-Z√Ñ√ñ√ú] |\
 	<n>:l <CB> [Ll] |\
 	<n>:m <CB> [BbMmPp] |\
 	<n>:[rn] <CB> [Rr] |\
-        <d>:d <CB> [a-ehijmoqru-x‰ˆ¸ﬂA-EHIJMOQRU-Xƒ÷‹] |\
+        <d>:d <CB> [a-ehijmoqru-x√§√∂√º√üA-EHIJMOQRU-X√Ñ√ñ√ú] |\
         <d>:f <CB> [Ff] |\
         <d>:g <CB> [Gg] |\
         <d>:k <CB> [Kk] |\
@@ -37,9 +37,9 @@ $R1$ =  (. |\
         <d>:s <CB> [Ss] |\
         <d>:t <CB> [Tt] |\
        <~n>:<><CB> [bcdfghjklmnpqrstvwxyz] |\
-       <~n>:n <CB> [AEIOUƒ÷‹aeiou‰ˆ¸] |\
+       <~n>:n <CB> [AEIOU√Ñ√ñ√úaeiou√§√∂√º] |\
        <e>. <FB> <er>:<> |\
-       [a-z‰ˆ¸ﬂ]. <FB> {<er>}:{er}) *
+       [a-z√§√∂√º√ü]. <FB> {<er>}:{er}) *
 
 
 %**************************************************************************
@@ -53,58 +53,58 @@ $R2$ = ((st<FB>) s<=><> (t:.)) & ((st<FB>s:.) t<=><>)
 
 %**************************************************************************
 % Umlaut
-% Apfel$		==> ƒpfel
-% alter$e 		==> ‰ltere
-% Saal$e		==> S‰le
-% Koog$e		==> Kˆge
-% Schwabe<^Del>$in	==> Schw‰bin
-% Tochter$		==> Tˆchter
+% Apfel$		==> √Ñpfel
+% alter$e 		==> √§ltere
+% Saal$e		==> S√§le
+% Koog$e		==> K√∂ge
+% Schwabe<^Del>$in	==> Schw√§bin
+% Tochter$		==> T√∂chter
 %**************************************************************************
 
 ALPHABET = [#char# #phon-trigger# #orth-trigger# #ss-trigger#] <e> \
-	 <UL>:<FB> [aouAOU]:[‰ˆ¸ƒ÷‹] [ao]:<>
+	 <UL>:<FB> [aouAOU]:[√§√∂√º√Ñ√ñ√ú] [ao]:<>
 
-$Cons$ = [bcdfghjklmnpqrstvwxyzﬂ]
+$Cons$ = [bcdfghjklmnpqrstvwxyz√ü]
 $ConsUp$ = [BCDFGHJKLMNPQRSTVWXYZ]
 $LC$ = <CB> | <WB> | <NoHy> | <NoDef> | <^UC> | $Cons$ | $ConsUp$
 
-$R3$ =	($LC$ [aouAOU]<=>[‰ˆ¸ƒ÷‹] ([aou]:.? $Cons$* <FB>? ([#ss-trigger#]|(e($Cons$|<^Del>)))? <UL>:<FB>)) &\
-	(([aA]:[‰ƒ]) a <=> <> ($Cons$)) &\
-	(([oO]:[ˆ÷]) o <=> <> ($Cons$))
+$R3$ =	($LC$ [aouAOU]<=>[√§√∂√º√Ñ√ñ√ú] ([aou]:.? $Cons$* <FB>? ([#ss-trigger#]|(e($Cons$|<^Del>)))? <UL>:<FB>)) &\
+	(([aA]:[√§√Ñ]) a <=> <> ($Cons$)) &\
+	(([oO]:[√∂√ñ]) o <=> <> ($Cons$))
 
 
 %**************************************************************************
-% ﬂ/ss-alternation
+% √ü/ss-alternation
 % (1) obligatorisch nach kurzem Vokal und vor 'e'
-% Fluﬂ~+es	==> Flusses
-% Fuﬂ+es	==> Fuﬂes
+% Flu√ü~+es	==> Flusses
+% Fu√ü+es	==> Fu√ües
 % Zeugnis~+es	==> Zeugnisses
 %**************************************************************************
 
 ALPHABET = [#char# #phon-trigger# #orth-trigger#] <SSalt><SSneu><e> \
 	<SS>:[<><SS>]
 
-% Schuﬂ<SS><FB><SS...> --> Schuﬂ<FB><SS...>
-$R4a$ =	(ﬂ) <SS> <=> <> (<FB> [#ss-trigger#])
+% Schu√ü<SS><FB><SS...> --> Schu√ü<FB><SS...>
+$R4a$ =	(√ü) <SS> <=> <> (<FB> [#ss-trigger#])
 
 
 $B$ = [<FB><INS-E>]
 
 ALPHABET = [#char# #phon-trigger# #orth-trigger#] <SSalt><SSneu><e> \
-	ﬂ:s <SS>:[<>s]
+	√ü:s <SS>:[<>s]
 
 % Note: <SSneu> and <SSalt> are excluded in the respective contexts
 % since <SSneu>:s and <SSalt:<> are not in the alphabet
-$R4b$ =	(ﬂ <=> s (<FB>? [#ss-trigger#]:. $B$ [aeiou])) & \
-	((ﬂ:s <FB>? | s) [#ss-trigger#] <=> s ($B$ [aeiou])) & \
+$R4b$ =	(√ü <=> s (<FB>? [#ss-trigger#]:. $B$ [aeiou])) & \
+	((√ü:s <FB>? | s) [#ss-trigger#] <=> s ($B$ [aeiou])) & \
 	((s) [#ss-trigger#] <=> <> ($B$ ($Cons$ | <WB>)))
 
 ALPHABET = [#char# #phon-trigger# #orth-trigger#] <e> \
-	[ﬂ<SSneu>]:s <SSalt>:<>
+	[√ü<SSneu>]:s <SSalt>:<>
 
-$R4c$ =	(ﬂ <=> s (<FB>? <SSneu>:.)) & \
-	((ﬂ:s <FB>? | s) <SSneu> <=> s ) & \
-	((ﬂ <FB>?) <SSalt> <=> <> )
+$R4c$ =	(√ü <=> s (<FB>? <SSneu>:.)) & \
+	((√ü:s <FB>? | s) <SSneu> <=> s ) & \
+	((√ü <FB>?) <SSalt> <=> <> )
 
 $R4$ = $R4a$ || $R4b$ || $R4c$
 
@@ -125,8 +125,8 @@ $R5$ = e <=> <> ($B$ e)
 % optional e-elision with genitive
 % Tisch+es	==> Tisches, Tischs
 % Haus+es	==> Hauses
-% Fluﬂ~+es	==> Flusses
-% Fuﬂ+es	==> Fuﬂes
+% Flu√ü~+es	==> Flusses
+% Fu√ü+es	==> Fu√ües
 % Zeugnis~+es	==> Zeugnisses
 %**************************************************************************
 
@@ -184,13 +184,13 @@ $R10$ = <e> => <> ([lrn] $B$ [eui]) &\
 % ras&st	==> (du) rast
 % feix&st	==> (du) feixt
 % birs+st	==> (du) birst
-% groﬂ$st 	==> grˆﬂt
+% gro√ü$st 	==> gr√∂√üt
 %**************************************************************************
 
 ALPHABET = [#char# #phon-trigger# #orth-trigger#]  \
 	 <e>:e s:<>
 
-$R11$ = ([xsﬂz] $B$) s <=> <> (t)
+$R11$ = ([xs√üz] $B$) s <=> <> (t)
 
 
 %**************************************************************************
@@ -215,7 +215,7 @@ ALPHABET = [#char# #phon-trigger# #orth-trigger#]  \
 	 <INS-E>:[e<>]
 
 % gewappn&t&st  ==> gewappnetst
-$R13$ = ((((c[hk])|[bdfgmp])n | [a-z‰ˆ¸ﬂ]t) <INS-E> <=> e) & \
+$R13$ = ((((c[hk])|[bdfgmp])n | [a-z√§√∂√º√ü]t) <INS-E> <=> e) & \
 	((<INS-E>:e[dt]) <INS-E> <=> <>)
 
 
@@ -238,54 +238,54 @@ $B$ = [<CB><FB>]
 ALPHABET = [#char# #phon-trigger# #orth-trigger#]  \
 	 f:[<f><>] [<OLDORTH><NEWORTH>]:<>
 
-$Rf$ =	(f f <=> <> (<OLDORTH>:. $B$ [fF] [aeiou‰ˆ¸])) &\
-	(f f <=> <f> (<NEWORTH>:. $B$ [fF] [aeiou‰ˆ¸])) &\
-	(f f <=> <x> ($B$ [fF] [aeiou‰ˆ¸])) &\
+$Rf$ =	(f f <=> <> (<OLDORTH>:. $B$ [fF] [aeiou√§√∂√º])) &\
+	(f f <=> <f> (<NEWORTH>:. $B$ [fF] [aeiou√§√∂√º])) &\
+	(f f <=> <x> ($B$ [fF] [aeiou√§√∂√º])) &\
 	(f:<> <OLDORTH> <=> <>) &\
 	(f:<f> <NEWORTH> <=> <>)
 
 ALPHABET = [#char# #phon-trigger# #orth-trigger#]  \
 	l:[<l><>] [<OLDORTH><NEWORTH>]:<> <f>:f
 
-$Rl$ =	(l l <=> <> (<OLDORTH>:. $B$ [lL] [aeiou‰ˆ¸])) &\
-	(l l <=> <l> (<NEWORTH>:. $B$ [lL] [aeiou‰ˆ¸])) &\
-	(l l <=> <x> ($B$ [lL] [aeiou‰ˆ¸])) &\
+$Rl$ =	(l l <=> <> (<OLDORTH>:. $B$ [lL] [aeiou√§√∂√º])) &\
+	(l l <=> <l> (<NEWORTH>:. $B$ [lL] [aeiou√§√∂√º])) &\
+	(l l <=> <x> ($B$ [lL] [aeiou√§√∂√º])) &\
 	(l:<> <OLDORTH> <=> <>) &\
 	(l:<l> <NEWORTH> <=> <>)
 
 ALPHABET = [#char# #phon-trigger# #orth-trigger#]  \
 	m:[<m><>] [<OLDORTH><NEWORTH>]:<> <l>:l
 
-$Rm$ =	(m m <=> <> (<OLDORTH>:. $B$ [mM] [aeiou‰ˆ¸])) &\
-	(m m <=> <m> (<NEWORTH>:. $B$ [mM] [aeiou‰ˆ¸])) &\
-	(m m <=> <x> ($B$ [mM] [aeiou‰ˆ¸])) &\
+$Rm$ =	(m m <=> <> (<OLDORTH>:. $B$ [mM] [aeiou√§√∂√º])) &\
+	(m m <=> <m> (<NEWORTH>:. $B$ [mM] [aeiou√§√∂√º])) &\
+	(m m <=> <x> ($B$ [mM] [aeiou√§√∂√º])) &\
 	(m:<> <OLDORTH> <=> <>) &\
 	(m:<m> <NEWORTH> <=> <>)
 
 ALPHABET = [#char# #phon-trigger# #orth-trigger#]  \
 	n:[<n><>] [<OLDORTH><NEWORTH>]:<> <m>:m
 
-$Rn$ =	(n n <=> <> (<OLDORTH>:. $B$ [nN] [aeiou‰ˆ¸])) &\
-	(n n <=> <n> (<NEWORTH>:. $B$ [nN] [aeiou‰ˆ¸])) &\
-	(n n <=> <x> ($B$ [nN] [aeiou‰ˆ¸])) &\
+$Rn$ =	(n n <=> <> (<OLDORTH>:. $B$ [nN] [aeiou√§√∂√º])) &\
+	(n n <=> <n> (<NEWORTH>:. $B$ [nN] [aeiou√§√∂√º])) &\
+	(n n <=> <x> ($B$ [nN] [aeiou√§√∂√º])) &\
 	(n:<> <OLDORTH> <=> <>) &\
 	(n:<n> <NEWORTH> <=> <>)
 
 ALPHABET = [#char# #phon-trigger# #orth-trigger#]  \
 	r:[<r><>] [<OLDORTH><NEWORTH>]:<> <n>:n
 
-$Rr$ =	(r r <=> <> (<OLDORTH>:. $B$ [rR] [aeiou‰ˆ¸])) &\
-	(r r <=> <r> (<NEWORTH>:. $B$ [rR] [aeiou‰ˆ¸])) &\
-	(r r <=> <x> ($B$ [rR] [aeiou‰ˆ¸])) &\
+$Rr$ =	(r r <=> <> (<OLDORTH>:. $B$ [rR] [aeiou√§√∂√º])) &\
+	(r r <=> <r> (<NEWORTH>:. $B$ [rR] [aeiou√§√∂√º])) &\
+	(r r <=> <x> ($B$ [rR] [aeiou√§√∂√º])) &\
 	(r:<> <OLDORTH> <=> <>) &\
 	(r:<r> <NEWORTH> <=> <>)
 
 ALPHABET = [#char# #phon-trigger# #orth-trigger#] \
 	t:[<t><>] [<OLDORTH><NEWORTH>]:<> <r>:r
 
-$Rt$ =	(t t <=> <> (<OLDORTH>:. $B$ [tT] [aeiou‰ˆ¸])) &\
-	(t t <=> <t> (<NEWORTH>:. $B$ [tT] [aeiou‰ˆ¸])) &\
-	(t t <=> <x> ($B$ [tT] [aeiou‰ˆ¸])) &\
+$Rt$ =	(t t <=> <> (<OLDORTH>:. $B$ [tT] [aeiou√§√∂√º])) &\
+	(t t <=> <t> (<NEWORTH>:. $B$ [tT] [aeiou√§√∂√º])) &\
+	(t t <=> <x> ($B$ [tT] [aeiou√§√∂√º])) &\
 	(t:<> <OLDORTH> <=> <>) &\
 	(t:<t> <NEWORTH> <=> <>)
 
@@ -325,19 +325,19 @@ $R19$ = .*
 % up to low
 %**************************************************************************
 
-ALPHABET = [#char#] <^UC><NoHy><NoDef> <CB>:<> [A-Zƒ÷‹]:[a-z‰ˆ¸] <I>:I
+ALPHABET = [#char#] <^UC><NoHy><NoDef> <CB>:<> [A-Z√Ñ√ñ√ú]:[a-z√§√∂√º] <I>:I
 
-$R20$ = <CB>:<> [A-Zƒ÷‹] <=> [a-z‰ˆ¸] [a-z‰ˆ¸ﬂ·ÈÌÛ˙]
+$R20$ = <CB>:<> [A-Z√Ñ√ñ√ú] <=> [a-z√§√∂√º] [a-z√§√∂√º√ü√°√©√≠√≥√∫]
 
 
 %**************************************************************************
 % low to up
 %**************************************************************************
 
-ALPHABET = [#char#] <NoHy><NoDef> <^UC>:<> [a-z‰ˆ¸]:[A-Zƒ÷‹]
+ALPHABET = [#char#] <NoHy><NoDef> <^UC>:<> [a-z√§√∂√º]:[A-Z√Ñ√ñ√ú]
 
-$R21$ = ((<^UC>:<>) [a-z‰ˆ¸] <=> [A-Zƒ÷‹]) & \
-	!(.* <^UC>:<> .:[a-z‰ˆ¸] .*)
+$R21$ = ((<^UC>:<>) [a-z√§√∂√º] <=> [A-Z√Ñ√ñ√ú]) & \
+	!(.* <^UC>:<> .:[a-z√§√∂√º] .*)
 
 
 %**************************************************************************

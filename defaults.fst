@@ -6,7 +6,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % default derivational and composition stem of adjectives and nouns
-% ending in long vowel + ﬂ
+% ending in long vowel + √ü
 
 ALPHABET = [#char# <SS>]
 
@@ -17,13 +17,13 @@ $TMP$ = .* ss <SS>? $C$ <>:<base> || $BDKStems$
 $F$ = $C$ {<base> [<nativ><fremd><frei>]}:{} \
 	[<NFem/Sg><NNeut/Sg_es><Name-Masc_0><Name-Neut_0><FamName_0>]:<>
 
-$DefStems-ss$ = $TMP$ || <Stem>:<> .* ﬂ <SS> $F$
+$DefStems-ss$ = $TMP$ || <Stem>:<> .* √ü <SS> $F$
 
 $F$ = $C$ {<base> [<nativ><fremd><frei>]}:{} \
 	[<Adj~+e><NFem-s/$sse><NFem-s/ssen><NMasc-s/$sse><NMasc-s/Sg>\
 	<NMasc-s/sse><NNeut-s/$sser><NNeut-s/sse>]:<>
 
-$DefStems-ss$ = $DefStems-ss$ | ($TMP$ || <Stem>:<> .* ﬂ <>:<SS> $F$)
+$DefStems-ss$ = $DefStems-ss$ | ($TMP$ || <Stem>:<> .* √ü <>:<SS> $F$)
 
 $F$ = $C$ {<base> [<nativ><fremd><frei>]}:{} \
 	[<Adj$><Adj+e><AdjPos><AdjPosPred><FamName_0><FamName_s><NFem/Sg>\
@@ -31,7 +31,7 @@ $F$ = $C$ {<base> [<nativ><fremd><frei>]}:{} \
 	<NNeut/Sg_es><NNeut_es_$e><NNeut_es_e><Name-Masc_0><Name-Neut_0>\
 	<Name-Neut_s>]:<>
 
-$DefStems-ss$ = $DefStems-ss$ | ($TMP$ || <Stem>:<> .* ﬂ $F$)
+$DefStems-ss$ = $DefStems-ss$ | ($TMP$ || <Stem>:<> .* √ü $F$)
 
 
 % default derivational stem of adjectives ending in el or er
@@ -119,7 +119,7 @@ $DefKomposNNfem$ = $DefKomposNNfem$ | \
 
 % Add Fugen-s to the following feminine compounding stems
 
-$T$ = [hk]eit | ung | ion | t‰t |\
+$T$ = [hk]eit | ung | ion | t√§t |\
     pflicht | schicht | sicht | flucht | [dmn]acht | [sz]ucht |\
     kunft | schaft | schrift |\
     [Aa]rbeit | mut | fahrt | [Gg]eburt | falt | [Gg]eduld | [Ss]chuld
@@ -143,12 +143,12 @@ $DefKomposNN$ = $DefKomposNN$ | $DefKomposNNfem$
 
 % delete final e in derivation stems unless a vowel precedes
 % Final en is excluded
-$c$ = [bcdfghj-np-tvwxzﬂ]
-$C$ = [BCDFGHJ-NP-TVWXZbcdfghj-np-tvwxzﬂ] | s:<SS>
+$c$ = [bcdfghj-np-tvwxz√ü]
+$C$ = [BCDFGHJ-NP-TVWXZbcdfghj-np-tvwxz√ü] | s:<SS>
 
-ALPHABET = [#char#] <NN> e:<> s:[ﬂ<SS>]
-$Del-e$ = (s <=> ﬂ (s:. e:. <NN>)) &\
-	  (s:ﬂ s <=> <SS> (e:. <NN>)) &\
+ALPHABET = [#char#] <NN> e:<> s:[√ü<SS>]
+$Del-e$ = (s <=> √ü (s:. e:. <NN>)) &\
+	  (s:√ü s <=> <SS> (e:. <NN>)) &\
 	  ($C$ e <=> <> <NN>) &\
 	  !(.* en<NN>)
 
@@ -182,7 +182,7 @@ $DefKomposNE$ = $DefDerivNE$
 
 $T$ = (. | [<PREF><VPREF><VPART>]<V><X>)* <V> {<deriv><X><deriv>}:{}<V>:<base> $AN$ <>:<+V>
 
-$T2$ = ([a-df-z‰ˆ¸ﬂ] | e:<INS-E>) t
+$T2$ = ([a-df-z√§√∂√º√ü] | e:<INS-E>) t
 
 $DefBaseADJ$ = \
   (($T$ <PPast> || $TMP$ || $NoDef2NULL$ $T2$) <ADJ> <SUFF>:<> <base> {}:{<nativ><Adj&>}) |\
@@ -190,7 +190,7 @@ $DefBaseADJ$ = \
    $TMP$ || $NoDef2NULL$ (n|d)) <ADJ> <SUFF>:<> <base> {}:{<nativ><Adj+>})
 
 $DefBaseADJ$ = $DefBaseADJ$ | \
-  (meist|best|hoch|hˆchst) {<ADV><kompos><X>}:{} ($T$ <PPast> || $TMP$ || $NoDef2NULL$ $T2$) <ADJ> <SUFF>:<> <base> {}:{<nativ><Adj&>}
+  (meist|best|hoch|h√∂chst) {<ADV><kompos><X>}:{} ($T$ <PPast> || $TMP$ || $NoDef2NULL$ $T2$) <ADJ> <SUFF>:<> <base> {}:{<nativ><Adj&>}
 
 % default adjective composition and derivation stems
 
@@ -201,7 +201,7 @@ $DefKomposADJ$ = \
 (.+ $AN$ <ADJ>{<deriv><X>}:{<><base>} $AN$ {<deriv><ADJ><Comp>}:{<+ADJ><Comp><Pred>} || $TMP$ || $NDF$) <ADJ><SUFF>:<> |\
 (.+ $AN$ <ADJ>{<deriv><X>}:{<><base>} $AN$ {<deriv><ADJ><Sup>}:{<+ADJ><Sup><Pred>} || $TMP$ || $NDF$) <ADJ><SUFF>:<>
 
-% delete the final "e" in "bange", "m¸de" etc.
+% delete the final "e" in "bange", "m√ºde" etc.
 
 %ALPHABET = [#char#] e:<> <ADJ>
 ALPHABET = (^$DefKomposADJ$) | e:<> | <ADJ>
@@ -249,16 +249,16 @@ $DefDerivV$ = $TMP$ || $DefDerivV$
 
 ALPHABET = [#char#] <e> <^Ax>
 
-$T$ = (!(ss|.ﬂ|.<SS>)) & ..
+$T$ = (!(ss|.√ü|.<SS>)) & ..
 $SS$ = .* ($T$            [<ADJ><NN><NPROP><V>] |\
-	   ﬂ <SS>:<SS>    [<ADJ><NN><NPROP>] |\
-	   ﬂ <SS>:<SSalt> [<ADJ><NN><NPROP>] <OLDORTH>:<> |\
-	   ﬂ <SS>:<SSneu> [<ADJ><NN><NPROP>] <NEWORTH>:<> |\
-	   ﬂ              [<ADJ><NN><NPROP><V>] |\
+	   √ü <SS>:<SS>    [<ADJ><NN><NPROP>] |\
+	   √ü <SS>:<SSalt> [<ADJ><NN><NPROP>] <OLDORTH>:<> |\
+	   √ü <SS>:<SSneu> [<ADJ><NN><NPROP>] <NEWORTH>:<> |\
+	   √ü              [<ADJ><NN><NPROP><V>] |\
 	   ss             [<ADJ><NN><NPROP>] |\
-	   s:ﬂ s:<SS>     <V> |\
-	   s:ﬂ s:<SSalt>  <V> <OLDORTH>:<> |\
-	   s:ﬂ s:<SSneu>  <V> <NEWORTH>:<> )
+	   s:√ü s:<SS>     <V> |\
+	   s:√ü s:<SSalt>  <V> <OLDORTH>:<> |\
+	   s:√ü s:<SSneu>  <V> <NEWORTH>:<> )
 
 $DefKompos$ = ($DefKomposADJ$ | $DefKomposNE$ |$DefKomposNN$ | $DefKomposV$ |\
 	 $DefStems-ss$) [<OLDORTH><NEWORTH>]? || $SS$

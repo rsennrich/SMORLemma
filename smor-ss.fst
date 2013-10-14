@@ -5,11 +5,11 @@
 %  Content:      
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% replacement of ß by ss
+% replacement of ÃŸ by ss
 
-$TMP$ = [A-ZÄÖÜa-zäöü0-9\ \-]
-$TMP2$ = $TMP$ | {ß}:{ss}
-$Filter$ = <NoHy>:<>? $TMP$* {<>ß}:{ss} $TMP2$*
+$TMP$ = [A-ZÃ„Ã–Ãœa-zÃ¤Ã¶Ã¼0-9\ \-]
+$TMP2$ = $TMP$ | {ÃŸ}:{ss}
+$Filter$ = <NoHy>:<>? $TMP$* {<>ÃŸ}:{ss} $TMP2$*
 
 $MORPH$ = "<morph2.a>" || $Filter$
 

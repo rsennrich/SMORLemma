@@ -31,7 +31,7 @@ $TAIL$ = ($C1$* <Stem> $C1$* $C2$*)? $C3$* [#inflection#]?
 ALPHABET = [#char# #entry-type# #deko-trigger# #orth-trigger# #ss-trigger# \
 	    #tmp# #category-KSF# #stemtype# <FB><zu>]  $TAIL$ i:<>
 
-$X$ = (Phys|Anästhesi|Epidemi)
+$X$ = (Phys|AnÃ¤sthesi|Epidemi)
 $Y$ = <NN><deriv><gebunden>[<OLDORTH><NEWORTH>]? \
       <Suffix><gebunden><deriv><NN><UL>?
 
@@ -127,9 +127,9 @@ ALPHABET = [#char# #entry-type# #deko-trigger# #orth-trigger# #ss-trigger#\
 	 #tmp# <zu>]
 
 
-$Cons$ = [BCDFGHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyzß]
+$Cons$ = [BCDFGHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyzÃŸ]
 
-$TMP$ = [AOU]:[ÄÖÜ] | A:Ä (a:<> | u) | $Cons$ ([aou]:[äöü] | a:ä (a:<> | u))
+$TMP$ = [AOU]:[Ã„Ã–Ãœ] | A:Ã„ (a:<> | u) | $Cons$ ([aou]:[Ã¤Ã¶Ã¼] | a:Ã¤ (a:<> | u))
 
 $UMLAUTUNG$ =  .* ($TMP$? $Cons$* ([e<e>][rl])? [#ss-trigger#]? \
 	($B$ <UL>:<> .*)+)? $TAIL$

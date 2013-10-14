@@ -5,10 +5,10 @@
 %  Content:      
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% replacement of umlauts and ﬂ
-$TMP$ = [A-Za-z0-9\ \-] | {ﬂ}:{ss}
-$TMP2$ = $TMP$ | [‰ˆ¸ƒ÷‹]:[aouAOU]<>:e
-$Filter$ = <NoHy>:<>? $TMP$* ([‰ˆ¸ƒ÷‹]:[aouAOU]<>:e) $TMP2$*
+% replacement of umlauts and √ü
+$TMP$ = [A-Za-z0-9\ \-] | {√ü}:{ss}
+$TMP2$ = $TMP$ | [√§√∂√º√Ñ√ñ√ú]:[aouAOU]<>:e
+$Filter$ = <NoHy>:<>? $TMP$* ([√§√∂√º√Ñ√ñ√ú]:[aouAOU]<>:e) $TMP2$*
 
 $MORPH$ = "<morph2.a>" || $Filter$
 

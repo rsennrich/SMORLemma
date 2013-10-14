@@ -37,7 +37,7 @@ smor-gen.a: smor.a
 simple-morph.a: phon.a elim-disj.a simple-lexicon
 
 %.a: %.fst
-	ulimit -d 50000000; fst-compiler $< $@
+	ulimit -d 50000000; fst-compiler-utf8 $< $@
 
 %.ca: %.a
 	fst-compact $< $@

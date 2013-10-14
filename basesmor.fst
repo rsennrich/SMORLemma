@@ -22,7 +22,7 @@ $MORPH$ = .* || $MORPH$
 %**************************************************************************
 
 % blanks not allowed at the beginning or at the end
-$ANY$ = [\"\,\.\;§\?\!\'\&\+\%\*½²°\:\(\)0-9\/A-Za-zΰθμςωαινϊσβκξτϋδλφόΐΘΜÒΩΑΙΝΪΣΒΚΞΤΫΔΛΦάίηρ\<\>]
+$ANY$ = [\"\,\.\;Β§\?\!\'\&\+\%\*Β½Β²Β°\:\(\)0-9\/A-Za-zΓ Γ¨Γ¬Γ²ΓΉΓ΅Γ©Γ­ΓΊΓ³ΓΆΓªΓ®Γ΄Γ»Γ¤Γ«Γ¶ΓΌΓ€ΓΓΓ’Γ™ΓΓ‰ΓΓΓ“Γ‚ΓΓΓ”Γ›Γ„Γ‹Γ–ΓΓΓ§Γ±\<\>]
 $ANYB$ = \  | $ANY$
 $ANYB-$ = \- | $ANYB$
 $TMP$ = $ANY$ ($ANYB$* $ANY$)?
@@ -32,7 +32,7 @@ ALPHABET = _$MORPH$
 % hyphenated forms are restricted to the following parts of speech
 $HMORPH$ = .* [<+ADJ><+NN><+NPROP>] .* || $MORPH$
 
-$TMP$ =  (\- [A-Zΐ-ή]:[a-zΰ-ώ])? $ANYB-$*
+$TMP$ =  (\- [A-ZΓ€-Γ]:[a-zΓ -ΓΎ])? $ANYB-$*
 
 $MORPH$ = $MORPH$ || <NoHy>:<>? $ANYB-$*
 

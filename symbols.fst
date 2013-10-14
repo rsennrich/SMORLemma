@@ -4,7 +4,7 @@
 %  Content:      definition of the symbol sets
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-#char# = \ -\~¡-ÿ
+#char# = \ -\~Â¡-Ã¿
 
 #phon-trigger1# = <INS-E><FB><^Gen><^Del><^pl><^Ax><WB>
 #phon-trigger2# = <CB><^UC><NoHy><NoDef><I>

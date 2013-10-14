@@ -13,7 +13,7 @@ $C$ = [#char# #orth-trigger# #ss-trigger# #tmp# <^imp><^zz><ge>]
 
 $S$  = $C$ ($C$ | <CB>)*
 
-$S2$ = (<CB>:<>[A-ZÀ-Þ] | <CB>:<>?[a-zà-þ]) $S$
+$S2$ = (<CB>:<>[A-ZÃ€-Ãž] | <CB>:<>?[a-zÃ -Ã¾]) $S$
 
 $UPLOW$ = <^UC>:<> [<NoHy><NoDef>]? <>:<^UC> $S2$ <Low#>:<> |\
 	  <CB>:<>  $S$ <Fix#>:<> |\

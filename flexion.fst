@@ -126,10 +126,10 @@ $NFem/Pl$ =     {<+NN><Fem>}:{} $NPl_x$
 
 
 
-%  Mutter/M¸tter
+%  Mutter/M√ºtter
 $NFem_0_\$$ =   {<+NN><Fem>}:{} $N_0_\$$
 
-%  Wand/W‰nde
+%  Wand/W√§nde
 $NFem_0_\$e$ =  {<+NN><Fem>}:{} $N_0_\$e$
 
 %  Drangsal/Drangsale; Retina/Retinae
@@ -153,13 +153,13 @@ $NFem_0_x$ =    {<+NN><Fem>}:{} $N_0_x$
 % Special classes  (cf. DMOR Entwicklerhandbuch, section 6.1.1)
 %
 
-%  Hosteﬂ/Hostessen
+%  Hoste√ü/Hostessen
 $NFem-s/ssen$ = $SS$ {<+NN><Fem>}:{} $N_0_en$
 
 %  Kenntnis/Kenntnisse
 $NFem-s/sse$ =  $SS$ {<+NN><Fem>}:{} $N_0_\$e$
 
-%  Nuﬂ/N¸sse
+%  Nu√ü/N√ºsse
 $NFem-s/\$sse$ =$SS$ {<+NN><Fem>}:{} $N_0_\$e$
 
 
@@ -214,10 +214,10 @@ $NMasc_0_x$ =           {<+NN><Masc>}:{}  $N_0_x$
 %  Tag-(e)s/Tage; 
 $NMasc_es_e$ =          {<+NN><Masc>}:{}  $N_es_e$
 
-%  Arzt-(e)s/ƒrzte;
+%  Arzt-(e)s/√Ñrzte;
 $NMasc_es_\$e$ =        {<+NN><Masc>}:{}  $N_es_\$e$
 
-%  Gott-(e)s/Gˆtter
+%  Gott-(e)s/G√∂tter
 $NMasc_es_\$er$ =       {<+NN><Masc>}:{}  $N_es_\$er$
 
 %  Fleck-(e)s/Flecken
@@ -226,13 +226,13 @@ $NMasc_es_en$ =         {<+NN><Masc>}:{}  $N_es_en$
 %  Adler-s/Adler; Engel-s/Engel
 $NMasc_s_0$ =           {<+NN><Masc>}:{}  $N_s_0$
 
-%  Apfel-s/ƒpfel; Vater-s/V‰ter
+%  Apfel-s/√Ñpfel; Vater-s/V√§ter
 $NMasc_s_\$$ =          {<+NN><Masc>}:{}  $N_s_\$$
 
 %  Wagen-s/Wagen
 $NMasc_s_x$ =           {<+NN><Masc>}:{}  $N_s_x$
 
-%  Garten-s/G‰rten
+%  Garten-s/G√§rten
 $NMasc_s_\$x$ =         {<+NN><Masc>}:{}  $N_s_\$x$
 
 %  Drilling-s/Drillinge
@@ -261,16 +261,16 @@ $NMasc_n_n$ =           {<+NN><Masc>}:{}  $N_n_n$
 % Special classes  (cf. DMOR Entwicklerhandbuch, section 6.2.1)
 %
 
-%  Haﬂ-Hasses/--
+%  Ha√ü-Hasses/--
 $NMasc-s/Sg$ =          $SS$ {<+NN><Masc>}:{}   $NSg_es$
 
 %  Nimbus-/Nimbusse
 $NMasc-s0/sse$ =        $SS$ {<+NN><Masc>}:{}   $N_0_e$
 
-%  Bus/Busse; Erlaﬂ/Erlasse
+%  Bus/Busse; Erla√ü/Erlasse
 $NMasc-s/sse$ =         $SS$ {<+NN><Masc>}:{}   $N_es_e$
 
-%  Baﬂ/B‰sse
+%  Ba√ü/B√§sse
 $NMasc-s/\$sse$ =       $SS$ {<+NN><Masc>}:{}   $N_es_\$e$
 
 
@@ -303,7 +303,7 @@ $NMasc_en_en=in$ =                   $NMasc_en_en$ |\
 $NMasc_n_n=in$ =                     $NMasc_n_n$ |\
                 <>:<^Del><FB>in      $NFem-in$
 
-%  Schwabe/Schw‰bin; Bauer/B‰uerin
+%  Schwabe/Schw√§bin; Bauer/B√§uerin
 $NMasc_n_n=\$in$ =                   $NMasc_n_n$ |\
                 <FB>:<^Del><>:<UL>in $NFem-in$
 
@@ -370,13 +370,13 @@ $NNeut_0_x$ =           {<+NN><Neut>}:{}  $N_0_x$
 %  Spiel-(e)s/Spiele; Abgas-es/Abgase
 $NNeut_es_e$ =          {<+NN><Neut>}:{}  $N_es_e$
 
-%  Floﬂ-es/Flˆﬂe;
+%  Flo√ü-es/Fl√∂√üe;
 $NNeut_es_\$e$ =        {<+NN><Neut>}:{}  $N_es_\$e$
 
 %  Schild-(e)s/Schilder
 $NNeut_es_er$ =         {<+NN><Neut>}:{}  $N_es_\$er$
 
-%  Buch-(e)s/B¸cher
+%  Buch-(e)s/B√ºcher
 $NNeut_es_\$er$ =       {<+NN><Neut>}:{}  $N_es_\$er$
 
 %  Bett-(e)s/Betten
@@ -385,7 +385,7 @@ $NNeut_es_en$ =         {<+NN><Neut>}:{}  $N_es_en$
 %  Feuer-s/Feuer; Mittel-s/Mittel
 $NNeut_s_0$ =           {<+NN><Neut>}:{}  $N_s_0$
 
-%  Kloster-s/Klˆster
+%  Kloster-s/Kl√∂ster
 $NNeut_s_\$$ =          {<+NN><Neut>}:{}  $N_s_\$$
 
 %  Almosen-s/Almosen
@@ -426,7 +426,7 @@ $NNeut-Inner$ = {<+NN><Neut><NA><Sg><Wk>}:{<FB>e}  $N#$ |\
 %  Zeugnis/Zeugnisse
 $NNeut-s/sse$ =         $SS$         $NNeut_es_e$
 
-%  Faﬂ/F‰sser
+%  Fa√ü/F√§sser
 $NNeut-s/\$sser$ =      $SS$         $NNeut_es_\$er$
 
 
@@ -504,7 +504,7 @@ $Name-Pl_0$ =   {<+NPROP><NoGend>}:{}    $NPl_0$
 
 $Name-Pl_x$ =   {<+NPROP><NoGend>}:{}    $NPl_x$
 
-% %  Engl‰nder/Engl‰nder-in
+% %  Engl√§nder/Engl√§nder-in
 % $Name+er/in$ =  {<+ADJ><Invar>}:{}       $Adj#Up$ |\
 %                                          $NMasc_s_0=in$
 
@@ -550,17 +550,17 @@ $Adj0-Up$ =     {<+ADJ><Pos><Invar>}:{}  $Adj#Up$
 
 
 
-% bloﬂ, bloﬂ-; derartig, derartig-
+% blo√ü, blo√ü-; derartig, derartig-
 $AdjPos$ =      {<+ADJ><Pos><PA>}:{<FB>} $Adj#$ |\
                 {<+ADJ><Pos>}:{<FB>}     $AdjFlexSuff$ \
 %               |{<^ADJ><Pos>}:{<FB>}    $AdjNNSuff$   % nominalization
 
-% besser, besser-; hˆher, hˆher-
+% besser, besser-; h√∂her, h√∂her-
 $AdjComp$ =     {<+ADJ><Comp><PA>}:{er}  $Adj#$ |\
                 {<+ADJ><Comp>}:{er}      $AdjFlexSuff$ \
 %               |{<^ADJ><Comp>}:{er}     $AdjNNSuff$     % nominalization
 
-% best, besten, best-; hoch:hˆch-
+% best, besten, best-; hoch:h√∂ch-
 $AdjSup$ =      {<+ADJ><Sup>}:{sten}     $Adj#$ |\
                 {<+ADJ><Sup><PA>}:{st}   $Adj#$ |\
                 {<+ADJ><Sup>}:{st}       $AdjFlexSuff$ \
@@ -593,12 +593,12 @@ $Adj~+e$ =      $SS$            $AdjPos$ |\
                 $SS$ {}:{<FB>}  $AdjComp$ |\
                 $SS$ {}:{<FB>e} $AdjSup$
 
-% warm-, w‰rmer-, w‰rmst-
+% warm-, w√§rmer-, w√§rmst-
 $Adj\$$ =                  $AdjPos$ |\
                 {}:{<UL>}  $AdjComp$ |\
                 {}:{<UL>}  $AdjSup$
 
-% kalt-, k‰lter-, k‰ltest-
+% kalt-, k√§lter-, k√§ltest-
 $Adj\$e$ =                 $AdjPos$ |\
                 {}:{<UL>}  $AdjComp$ |\
                 {}:{<UL>e} $AdjSup$
@@ -667,8 +667,8 @@ $VAPresKonjSg$ = {<+V><13><Sg><Pres><Subj>}:{<FB>}  $V+(es)$ |\ % sei-; habe-; w
 $VAPresKonjPl$ = {<+V><13><Pl><Pres><Subj>}:{<FB>n} $V+(es)$ |\ % seie-n; habe-n; werde-n; tu-n
                  {<+V><2><Pl><Pres><Subj>}:{<FB>t}  $V+(es)$ % seie-t; habe-t; werde-et; tu-t
 
-$VAPastKonj2$ =  {<+V><2><Sg><Past><Subj>}:{<FB>st} $V+(es)$ |\ % w‰r-st
-                 {<+V><2><Pl><Past><Subj>}:{<FB>t}  $V+(es)$    % w‰r-t
+$VAPastKonj2$ =  {<+V><2><Sg><Past><Subj>}:{<FB>st} $V+(es)$ |\ % w√§r-st
+                 {<+V><2><Pl><Past><Subj>}:{<FB>t}  $V+(es)$    % w√§r-t
 
 % -----------------------------------------------------------------------
 
@@ -714,13 +714,13 @@ $VPres1Irreg$ = {<+V><1><Sg><Pres><Ind>}:{<FB>}         $V+(es)$
                 % (ich) liebe, rate, sammle
 $VPres1Reg$ =   {<+V><1><Sg><Pres><Ind>}:{<FB>e}        $V+(es)$
 
-                % (du) hilfst, r‰tst
+                % (du) hilfst, r√§tst
 $VPres2Irreg$ = {<+V><2><Sg><Pres><Ind>}:{<FB>st}       $V+(es)$
 
                 % (du) liebst, biet-e-st, sammelst
 $VPres2Reg$ =   {<+V><2><Sg><Pres><Ind>}:{<INS-E>st}    $V+(es)$
 
-                % (er) r‰t, will
+                % (er) r√§t, will
 $VPres3Irreg$ = {<+V><3><Sg><Pres><Ind>}:{<FB>}         $V+(es)$
 
                 % (er) liebt, hilft, sammelt
@@ -758,12 +758,12 @@ $VPastIndStr$ = {<+V><13><Sg><Past><Ind>}:{<FB>}                $V+(es)$ |\
 
                 % (ich) liebte, wollte, arbeit-e-te
 $VPastKonjReg$ = {<+V><13><Sg><Past><Subj>}:{<INS-E>te} $V+(es)$ |\
-                %       br‰chte
+                %       br√§chte
                 {<+V><2><Sg><Past><Subj>}:{<INS-E>test} $V+(es)$ |\
                 {<+V><13><Pl><Past><Subj>}:{<INS-E>ten} $V+(es)$ |\
                 {<+V><2><Pl><Past><Subj>}:{<INS-E>tet}  $V+(es)$
 
-                % (ich) f¸hre, ritte, f‰nde
+                % (ich) f√ºhre, ritte, f√§nde
 $VPastKonjStr$ = {<+V><13><Sg><Past><Subj>}:{<FB>e}     $V+(es)$ |\
                 {<+V><2><Sg><Past><Subj>}:{<FB>est}     $V+(es)$ |\
                 {<+V><13><Pl><Past><Subj>}:{<FB>en}     $V+(es)$ |\

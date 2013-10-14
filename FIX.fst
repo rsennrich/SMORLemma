@@ -12,11 +12,11 @@
 %**************************************************************************
 
 $Fix_Stems$ = \
-  ([\'\"\(«\<\[\{/]|\'\') {<+PUNCT><Left>}:{} |\
-  (\,\, | [\)»\>\]\}\\])  {<+PUNCT><Right>}:{} |\
+  ([\'\"\(Â«\<\[\{/]|\'\') {<+PUNCT><Left>}:{} |\
+  (\,\, | [\)Â»\>\]\}\\])  {<+PUNCT><Right>}:{} |\
   [\.\?\!\:;]             {<+PUNCT><Norm>}:{} |\
   \,                      {<+PUNCT><Comma>}:{} |\
-  (§ | §§ | \-\-?)        {<+SYMBOL>}:{} |\
+  (Â§ | Â§Â§ | \-\-?)        {<+SYMBOL>}:{} |\
 %
   zwei{<+CARD><Subst><NoGend><Dat><Pl><St>}:{en} |\
   zwei{<+CARD><Pro><NoGend><Gen><Pl><St>}:{er} |\
@@ -27,9 +27,9 @@ $Fix_Stems$ = \
   vier{<+CARD><Subst><NoGend><Dat><Pl><St>}:{en} |\
   vier{<+CARD><Pro><NoGend><Gen><Pl><St>}:{er} |\
   vier{<+CARD><Subst><NoGend><NA><Pl><St>}:{e} |\
-  fünf{<+CARD><Subst><NoGend><Dat><Pl><St>}:{en} |\
-  fünf{<+CARD><Pro><NoGend><Gen><Pl><St>}:{er} |\
-  fünf{<+CARD><Subst><NoGend><NA><Pl><St>}:{e} |\
+  fÃ¼nf{<+CARD><Subst><NoGend><Dat><Pl><St>}:{en} |\
+  fÃ¼nf{<+CARD><Pro><NoGend><Gen><Pl><St>}:{er} |\
+  fÃ¼nf{<+CARD><Subst><NoGend><NA><Pl><St>}:{e} |\
   sechs{<+CARD><Subst><NoGend><Dat><Pl><St>}:{en} |\
   sechs{<+CARD><Pro><NoGend><Gen><Pl><St>}:{er} |\
   sechs{<+CARD><Subst><NoGend><NA><Pl><St>}:{e} |\
@@ -42,9 +42,9 @@ $Fix_Stems$ = \
   elf{<+CARD><Subst><NoGend><Dat><Pl><St>}:{en} |\
   elf{<+CARD><Pro><NoGend><Gen><Pl><St>}:{er} |\
   elf{<+CARD><Subst><NoGend><NA><Pl><St>}:{e} |\
-  zwölf{<+CARD><Subst><NoGend><Dat><Pl><St>}:{en} |\
-  zwölf{<+CARD><Pro><NoGend><Gen><Pl><St>}:{er} |\
-  zwölf{<+CARD><Subst><NoGend><NA><Pl><St>}:{e} |\
+  zwÃ¶lf{<+CARD><Subst><NoGend><Dat><Pl><St>}:{en} |\
+  zwÃ¶lf{<+CARD><Pro><NoGend><Gen><Pl><St>}:{er} |\
+  zwÃ¶lf{<+CARD><Subst><NoGend><NA><Pl><St>}:{e} |\
   z:Zwei<CAP>{<+CARD><Subst><NoGend><Dat><Pl><St>}:{en} |\
   z:Zwei<CAP>{<+CARD><Pro><NoGend><Gen><Pl><St>}:{er} |\
   z:Zwei<CAP>{<+CARD><Subst><NoGend><NA><Pl><St>}:{e} |\
@@ -54,9 +54,9 @@ $Fix_Stems$ = \
   v:Vier<CAP>{<+CARD><Subst><NoGend><Dat><Pl><St>}:{en} |\
   v:Vier<CAP>{<+CARD><Pro><NoGend><Gen><Pl><St>}:{er} |\
   v:Vier<CAP>{<+CARD><Subst><NoGend><NA><Pl><St>}:{e} |\
-  f:Fünf<CAP>{<+CARD><Subst><NoGend><Dat><Pl><St>}:{en} |\
-  f:Fünf<CAP>{<+CARD><Pro><NoGend><Gen><Pl><St>}:{er} |\
-  f:Fünf<CAP>{<+CARD><Subst><NoGend><NA><Pl><St>}:{e} |\
+  f:FÃ¼nf<CAP>{<+CARD><Subst><NoGend><Dat><Pl><St>}:{en} |\
+  f:FÃ¼nf<CAP>{<+CARD><Pro><NoGend><Gen><Pl><St>}:{er} |\
+  f:FÃ¼nf<CAP>{<+CARD><Subst><NoGend><NA><Pl><St>}:{e} |\
   s:Sechs<CAP>{<+CARD><Subst><NoGend><Dat><Pl><St>}:{en} |\
   s:Sechs<CAP>{<+CARD><Pro><NoGend><Gen><Pl><St>}:{er} |\
   s:Sechs<CAP>{<+CARD><Subst><NoGend><NA><Pl><St>}:{e} |\
@@ -66,9 +66,9 @@ $Fix_Stems$ = \
   z:Zehn<CAP>{<+CARD><Subst><NoGend><Dat><Pl><St>}:{en} |\
   z:Zehn<CAP>{<+CARD><Pro><NoGend><Gen><Pl><St>}:{er} |\
   z:Zehn<CAP>{<+CARD><Subst><NoGend><NA><Pl><St>}:{e} |\
-  z:Zwölf<CAP>{<+CARD><Subst><NoGend><Dat><Pl><St>}:{en} |\
-  z:Zwölf<CAP>{<+CARD><Pro><NoGend><Gen><Pl><St>}:{er} |\
-  z:Zwölf<CAP>{<+CARD><Subst><NoGend><NA><Pl><St>}:{e} |\
+  z:ZwÃ¶lf<CAP>{<+CARD><Subst><NoGend><Dat><Pl><St>}:{en} |\
+  z:ZwÃ¶lf<CAP>{<+CARD><Pro><NoGend><Gen><Pl><St>}:{er} |\
+  z:ZwÃ¶lf<CAP>{<+CARD><Subst><NoGend><NA><Pl><St>}:{e} |\
   Behufe{<NN><base><X><+NN><Masc><Old><Dat><Sg>}:{} |\
   Paroli{<NN><base><X><+NN><NoGend><Acc><Sg>}:{} |\
   Ski{<NN><base><X><+NN><Masc><NGA><Pl>}:{er} |\
