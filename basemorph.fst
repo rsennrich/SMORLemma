@@ -14,7 +14,7 @@ $PHON$ = "<phon.a>"
 
 % read the morphemes
 
-$LEX$ = "lexicon" \
+$LEX$ = "lexicon/lexicon" \
 % add the numeric stems to the other morphems
 | $NumStems$ \
 % add repetitive prefixes

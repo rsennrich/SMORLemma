@@ -24,17 +24,20 @@ smor-cap.a smor-uc.a smor-ss.a smor-ascii.a: morph2.a
 
 smor.a: smor-lfg.a elim-disj.a
 
-basemorph.a: phon.a map1.a map2.a map3.a pro-lexicon lexicon \
+basemorph.a: phon.a map1.a map2.a map3.a lexicon/pro.lex lexicon/lexicon \
 	sufffilter.a komposfilter.a preffilter.a infixfilter.a uplow.a
 
 test.a: phon.a map1.a map2.a map3.a pro-lexicon lex sufffilter.a \
 	komposfilter.a preffilter.a infixfilter.a uplow.a
 
-smor-guesser.a: guesser-lexicon map1.a map2.a map3.a elimX.a elim-disj.a
+smor-guesser.a: lexicon/guesser.lex map1.a map2.a map3.a elimX.a elim-disj.a
 
 smor-gen.a: smor.a
 
 simple-morph.a: phon.a elim-disj.a simple-lexicon
+
+lexicon/lexicon: lexicon/adj.irreg.lex lexicon/adpositions.closed.lex lexicon/nouns.irreg.lex lexicon/verbs.irreg.lex lexicon/affix.lex lexicon/compile_lexicon.py
+	python lexicon/compile_lexicon.py
 
 %.a: %.fst
 	ulimit -d 50000000; fst-compiler-utf8 $< $@

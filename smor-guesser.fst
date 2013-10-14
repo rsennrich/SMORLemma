@@ -12,7 +12,7 @@ $PHON$ = "<phon.a>"
 
 % read the morphemes
 
-$LEX$ = "guesser-lexicon"
+$LEX$ = "lexicon/guesser.lex"
 
 $LEX$ = ("<map1.a>" || $LEX$) || "<map2.a>"
 

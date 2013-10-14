@@ -1,3 +1,12 @@
+<Stem>dicht<V><base><nativ><VVReg>
+<Stem>bastel<V><base><nativ><VVReg-el/er>
+<Stem>Jahr<NN><base><nativ><NNeut_es_e>
+<Stem>Tag<NN><base><nativ><NMasc_es_e>
+<Stem>Geburt<NN><base><nativ><NFem_0_en>
+<Stem>schön<ADJ><base><nativ><Adj+(e)>
+<Stem>müde<ADJ><base><nativ><Adj+>
+<Stem><ge>jammer<V><base><nativ><VVReg-el/er>
+<Stem>Fieber<NN><base><nativ><NNeut_s_0>
 <Prefix><no-ge>a<d><PREF><V><klassisch>
 <Prefix><no-ge>ab<PREF><V><klassisch>
 <Prefix><no-ge>anti<PREF><V><klassisch>

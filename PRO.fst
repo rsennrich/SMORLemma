@@ -12,7 +12,7 @@
 
 $TMP$ = [#tmp# <Pro> <Prfl> <WeakGen><CAP>]:<>*
 
-$Pro_Stems$ = "pro-lexicon" || [A-ZÄÖÜa-zäöüß]+ $TMP$
+$Pro_Stems$ = "lexicon/pro.lex" || [A-ZÄÖÜa-zäöüß]+ $TMP$
 
 
 % insertion of additional features in the analysis

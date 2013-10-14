@@ -1,0 +1,20 @@
+Lexical Data
+=================
+
+License: GNU Public License version 2
+
+Contents:
+- created by Helmut Schmid, IMS Stuttgart (part of SMOR)
+    - pro.lex (originally pro-lexicon)
+    - guesser.lex (originally guesser-lexicon)
+    - affix.lex (originally lexicon)
+
+- created by Peter Adolphs (copied from http://www-lehre.inf.uos.de/~thkruege/files/morphology_mining.tar.bz2):
+    - adj.irreg.lex
+    - adpositions.closed.lex
+    - nouns.irreg.lex
+    - verbs.irreg.lex
+
+- part of Morphisto (https://code.google.com/p/morphisto/)
+    - lexicon-transform.xslt
+    - align.py
