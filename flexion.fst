@@ -386,7 +386,7 @@ $NNeut_es_e$ =          {<+NN><Neut>}:{}  $N_es_e$
 $NNeut_es_\$e$ =        {<+NN><Neut>}:{}  $N_es_\$e$
 
 %  Schild-(e)s/Schilder
-$NNeut_es_er$ =         {<+NN><Neut>}:{}  $N_es_\$er$
+$NNeut_es_er$ =         {<+NN><Neut>}:{}  $N_es_er$
 
 %  Buch-(e)s/Bücher
 $NNeut_es_\$er$ =       {<+NN><Neut>}:{}  $N_es_\$er$
