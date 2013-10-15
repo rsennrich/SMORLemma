@@ -12,7 +12,7 @@
 % Prefix Filter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-#tmp# = #surface-trigger# <^Ax><I><Ge-Nom><INS-E><FB><VPART><UL>
+#tmp# = #surface-trigger#  #morpheme_boundary_marker# <^Ax><I><Ge-Nom><INS-E><FB><VPART><UL>
 
 ALPHABET = [#char# #entry-type# #orth-trigger# #ss-trigger# #tmp# \
 	 <no-ge><Initial><NoHy><NoDef> <zu>]

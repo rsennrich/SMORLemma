@@ -7,7 +7,7 @@
 
 #include "symbols.fst"
 
-#tmp# = #surface-trigger# <^Ax><I><INS-E><NoHy><NoDef><FB><UL><^pl><^Gen><^Del>
+#tmp# = #surface-trigger# #morpheme_boundary_marker# <^Ax><I><INS-E><NoHy><NoDef><FB><UL><^pl><^Gen><^Del>
 
 $C$ = [#char# #orth-trigger# #ss-trigger# #tmp# <^imp><^zz><ge>]
 

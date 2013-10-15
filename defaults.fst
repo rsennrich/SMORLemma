@@ -37,7 +37,7 @@ $DefStems-ss$ = $DefStems-ss$ | ($TMP$ || <Stem>:<> .* ß $F$)
 % default derivational stem of adjectives ending in el or er
 
 $DefStems-el/er$ = .* <ADJ> <>:<base> || $BDKStems$ ||\
-    <Stem>:<> [#char#]* <>:<^Ax><ADJ> {<base>[<nativ><fremd><frei>]<Adj-el/er>}:{}
+    <Stem>:<> [#char#]* [#morpheme_boundary_marker#]* <>:<^Ax><ADJ> {<base>[<nativ><fremd><frei>]<Adj-el/er>}:{}
 
 
 % derivation of default stems from inflected word forms
@@ -56,7 +56,11 @@ $TMP$ = $TMP$ || "<infixfilter.a>"
 $TMP$ = $TMP$ || "<uplow.a>"
 
 
-$TMP$ = <>:<WB> $TMP$ <>:<WB> || $PHON$
+$InsertElisionMarker$ = <ambig-e-elisionGen>:<>
+
+$MORPH$ = $TMP$
+#include "phon.fst"
+$TMP$ = $MORPH$
 
 % expansion of disjunctive features
 ALPHABET = [#char# #feature# \
@@ -71,14 +75,14 @@ ALPHABET = [#char# #feature# \
 [<Nom><Dat><Acc>]:<NDA> \
 [<Nom><Gen><Acc>]:<NGA> \
 [#case#]:<NGDA> \
-[<Pred><Adv>]:<PA>
+[<Pred><Adv>]:<PA> \
 
 $TMP$ = .* || $TMP$
 
 
 $AN$ = [<OLDORTH><NEWORTH>]?
 
-$NDF$ = [#char#]*
+$NDF$ = [#char# #morpheme_boundary_marker#]*
 
 
 
@@ -86,35 +90,29 @@ $NDF$ = [#char#]*
 
 ALPHABET = _$TMP$
 
-$DefKomposNN$ = \
-(.+ {}:{<NN><base>} \
- ($AN$ {}:{<+NN>[<Masc><Neut><NoGend>] <Nom><Sg>} |\
-  $AN$ {}:{<+NN>[<Masc><Neut>] <Gen><Sg>} |\
-  $AN$ {}:{<+NN>[#gender#] <Nom><Pl>} <>:<Wk>?) || $TMP$ ||$NDF$)\
+$DefKomposNN$ = ^(.+ <NN><base> $AN$ \
+    (<+NN>[<Masc><Neut><NoGend>] <Nom><Sg> |\
+     <+NN>[<Masc><Neut>] <Gen><Sg><ambig-e-elisionGen>? |\
+     <+NN>[#gender#] <Nom><Pl> <>:<Wk>?) || $TMP$ || $NDF$)\
 <NN>
 
-$DefKomposNN$ = $DefKomposNN$ | \
-(.+ {}:{<NN><SUFF><base>} \
- ($AN$ {}:{<+NN>[<Masc><Neut><NoGend>] <Nom><Sg>} |\
-  $AN$ {}:{<+NN>[<Masc><Neut>] <Gen><Sg>} |\
-  $AN$ {}:{<+NN>[#gender#] <Nom><Pl>} <>:<Wk>?) || $TMP$ ||$NDF$)\
+$DefKomposNN$ = $DefKomposNN$ | ^(.+ <NN><SUFF><base> $AN$ \
+    (<+NN>[<Masc><Neut><NoGend>] <Nom><Sg> |\
+     <+NN>[<Masc><Neut>] <Gen><Sg><ambig-e-elisionGen>? |\
+     <+NN>[#gender#] <Nom><Pl> <>:<Wk>?) || $TMP$ || $NDF$)\
 <NN><SUFF>:<>
 
-$DefKomposNPROP$ = \
-(.+ {}:{<NPROP><base>} \
- ($AN$ {}:{<+NPROP>[#gender#] <Nom><Sg>} |\
-  $AN$ {}:{<+NPROP>[<Masc><Neut>] <Gen><Sg>} |\
-  $AN$ {}:{<+NN>[#gender#] <Nom><Pl>} <>:<Wk>?) || $TMP$ ||$NDF$)\
+$DefKomposNPROP$ = ^(.+ <NPROP><base> $AN$ \
+    (<+NPROP>[#gender#] <Nom><Sg> |\
+     <+NPROP>[<Masc><Neut>] <Gen><Sg><ambig-e-elisionGen>? |\
+     <+NPROP>[#gender#] <Nom><Pl> <>:<Wk>?) || $TMP$ || $NDF$)\
 <NN>
 
-$DefKomposNNfem$ = \
-(.+ {}:{<NN><base>} \
- ($AN$ {}:{<+NN><Fem><Nom><Sg>}) || $TMP$ ||$NDF$)\
+$DefKomposNNfem$ = ^(.+ <NN><base> $AN$ <+NN><Fem><Nom><Sg> || $TMP$ || $NDF$)\
 <NN>
 
 $DefKomposNNfem$ = $DefKomposNNfem$ | \
-(.+ {}:{<NN><SUFF><base>} \
- ($AN$ {}:{<+NN><Fem><Nom><Sg>}) || $TMP$ ||$NDF$)\
+                   ^(.+ <NN><SUFF><base> $AN$ <+NN><Fem><Nom><Sg> || $TMP$ || $NDF$)\
 <NN><SUFF>:<>
 
 % Add Fugen-s to the following feminine compounding stems
@@ -125,18 +123,26 @@ $T$ = [hk]eit | ung | ion | tät |\
     [Aa]rbeit | mut | fahrt | [Gg]eburt | falt | [Gg]eduld | [Ss]chuld
 
 % mark the stems for insertion
-ALPHABET = [#char#] <NN> <NN>:<sNN>
+ALPHABET = [#char# #morpheme_boundary_marker#] <NN> <NN>:<sNN>
 
-$R$ = $T$ <NN> <=> <sNN>
+$R$ = ($T$ [#morpheme_boundary_marker#]*) <NN> <=> <sNN>
+
 $T$ = $DefKomposNNfem$ || $R$
 
 
 % insertion of the Fugen-s
-ALPHABET = [#char#] <NN>
+ALPHABET = [#char# #morpheme_boundary_marker#] <NN>
 
-$DefKomposNNfem$ = $T$ || .* (<>:s? <sNN>:<NN>)?
+$DefKomposNNfemFugS$ = $T$ <ambig-KomposFemFugS>:<> || (.* <>:s <sNN>:<NN>)
 
-$DefKomposNN$ = $DefKomposNN$ | $DefKomposNNfem$
+ALPHABET = [#char#] <>:[#morpheme_boundary_marker#] <ambig-KomposFemFugS> <NN><SUFF>
+
+$DefKomposNN$ = .* || ($DefKomposNN$ | $DefKomposNNfem$ | $DefKomposNNfemFugS$)
+
+% new morpheme boundary marker for Fugenelement
+ALPHABET = [#char# #morpheme_boundary_marker#] <NN><SUFF> <\~>:<\->
+
+$DefKomposNN$ = $DefKomposNN$ || <\~> <=> <\->
 
 
 % default noun derivation stems
@@ -146,13 +152,13 @@ $DefKomposNN$ = $DefKomposNN$ | $DefKomposNNfem$
 $c$ = [bcdfghj-np-tvwxzß]
 $C$ = [BCDFGHJ-NP-TVWXZbcdfghj-np-tvwxzß] | s:<SS>
 
-ALPHABET = [#char#] <NN> e:<> s:[ß<SS>]
-$Del-e$ = (s <=> ß (s:. e:. <NN>)) &\
-	  (s:ß s <=> <SS> (e:. <NN>)) &\
-	  ($C$ e <=> <> <NN>) &\
-	  !(.* en<NN>)
+ALPHABET = [#char# #morpheme_boundary_marker#] <NN> e:<> s:[ß<SS>]
+$Del-e$ = (s <=> ß (s:. e:. [#morpheme_boundary_marker#]* <NN>)) &\
+	  (s:ß s <=> <SS> (e:. [#morpheme_boundary_marker#]* <NN>)) &\
+	  ($C$ e <=> <> ([#morpheme_boundary_marker#]* <NN>)) &\
+	  !(.* en [#morpheme_boundary_marker#]* <NN>)
 
-ALPHABET = [#char#]
+ALPHABET = [#char# #morpheme_boundary_marker#]
 
 $DefDerivNN$ = (\
 (.+ {}:{<NN><base>} $AN$ \
@@ -168,7 +174,7 @@ $DefDerivNE$ = \
 
 
 $X$ =  .+ <NPROP><>:<base> || $BDKStems$ ||\
-    <Stem>:<> [#char#]+ <NN><base>:<>[<nativ><fremd>]:<> [#Name-inflection#]:<>
+    <Stem>:<> [#char# #morpheme_boundary_marker#]+ <NN><base>:<>[<nativ><fremd>]:<> [#Name-inflection#]:<>
 
 $DefDerivNE$ = $DefDerivNE$ | $X$
 
@@ -182,7 +188,7 @@ $DefKomposNE$ = $DefDerivNE$
 
 $T$ = (. | [<PREF><VPREF><VPART>]<V><X>)* <V> {<deriv><X><deriv>}:{}<V>:<base> $AN$ <>:<+V>
 
-$T2$ = ([a-df-zäöüß] | e:<INS-E>) t
+$T2$ = ([a-df-zäöüß] | e:<INS-E>) [#morpheme_boundary_marker#]* t
 
 $DefBaseADJ$ = \
   (($T$ <PPast> || $TMP$ || $NoDef2NULL$ $T2$) <ADJ> <SUFF>:<> <base> {}:{<nativ><Adj&>}) |\
@@ -204,37 +210,48 @@ $DefKomposADJ$ = \
 % delete the final "e" in "bange", "müde" etc.
 
 %ALPHABET = [#char#] e:<> <ADJ>
-ALPHABET = (^$DefKomposADJ$) | e:<> | <ADJ>
+ALPHABET = (^$DefKomposADJ$) | <ADJ>
 
-$R$ = e => <> (<ADJ>)
+$R$ = (.* (e:<> ([#morpheme_boundary_marker#]* <ADJ>))+ .*)+
 
-$DefKomposADJ$ = $DefKomposADJ$ || $R$
+$DefKomposADJ$ = $DefKomposADJ$ | ($DefKomposADJ$ <ambig-KomposAdjElision>:<> || $R$)
 
 $DefDerivADJ$ = $DefKomposADJ$
 
 
 % default verb composition stems
 
-ALPHABET = [#char#] <NoDef> <e> <V> n:<en>
+ALPHABET = [#char# #morpheme_boundary_marker#] <NoDef> <e> <V> n:<en>
 
-$T$ = ([#char#] | [<PREF><VPREF><VPART>]<V><X> | {}:{<V><base>})*
+$T$ = ([#char# #morpheme_boundary_marker#] | [<PREF><VPREF><VPART>]<V><X> | {}:{<V><base>})*
 $T$ = $T$ {}:{<+V><Inf>} || $TMP$
-$DefKomposV$ = ($T$ || $NDF$ || [#char#]* ({en}:{} | e[rl]n:<>)) <V>
+$DefKomposV$ = ($T$ || $NDF$ || [#char# #morpheme_boundary_marker#]* ({en}:{} | e[rl] [#morpheme_boundary_marker#]? n:<>) [#morpheme_boundary_marker#]*) <V>
 
 
 % default verb derivation stems
 
 $DefDerivV$ = ($T$ ||\
-    <NoDef>:<>? [#char#]* ({en}:{} | e:<e> [rl] n:<>)) <V>
+    <NoDef>:<>? [#char# #morpheme_boundary_marker#]* ({en}:{} | e:<e> [rl] [#morpheme_boundary_marker#]? n:<>) [#morpheme_boundary_marker#]*) <V>
+
+%e-elision for verbs
+$DefDerivV$ = $DefDerivV$ | (($T$ || <NoDef>:<>? [#char#]* e:<> [rl] [#morpheme_boundary_marker#]? n:<> ) <ambig-e-elisionVerb>:<> <V>)
+
+ALPHABET = [#char# #entry-type# #stemtype# #origin# #complexity# #category-KSF# \
+	#Nom-class# #inflection# #surface-trigger# #deko-trigger# #morpheme_boundary_marker#] \
+	<FB><I><Ge-Nom><UL><QUANT><zu><ge><SS><OLDORTH><NEWORTH><NoDef>
+
+$BaseVElision$ = $BDKStems$ || .* <e>:<> [lr] [#morpheme_boundary_marker#]? <V><base><nativ><VVReg-el/er>
+
+$BaseVElision$ = .* <ambig-e-elisionVerb>:<> <V><base> || $BaseVElision$
 
 
-ALPHABET = [#char#] <NoDef> <e> <V> n:<en>
+ALPHABET = [#char# #morpheme_boundary_marker#] <NoDef> <e> <V> n:<en>
 
-$R$ = ([bdgptkfs] | ch) n <=> <en> (<V>)
+$R$ = ([bdgptkfs] | ch) n <=> <en> ([#morpheme_boundary_marker#]* <V>)
 
-ALPHABET = [#char#] <NoDef> <e>
+ALPHABET = [#char# #morpheme_boundary_marker#] <NoDef> <e>
 
-$R$ = $R$ || .*  {<><en>}:{<e>n}? <V>
+$R$ = $R$ || .*  {<><en>}:{<e>n}? [#morpheme_boundary_marker#]* <V>
 
 $DefDerivV$ = $DefDerivV$ || $R$
 
@@ -247,18 +264,18 @@ $TMP$ = !((.*<X>)?einen<V>)
 $DefDerivV$ = $TMP$ || $DefDerivV$
 
 
-ALPHABET = [#char#] <e> <^Ax>
+ALPHABET = [#char# #morpheme_boundary_marker#] <e> <^Ax>
 
 $T$ = (!(ss|.ß|.<SS>)) & ..
-$SS$ = .* ($T$            [<ADJ><NN><NPROP><V>] |\
-	   ß <SS>:<SS>    [<ADJ><NN><NPROP>] |\
-	   ß <SS>:<SSalt> [<ADJ><NN><NPROP>] <OLDORTH>:<> |\
-	   ß <SS>:<SSneu> [<ADJ><NN><NPROP>] <NEWORTH>:<> |\
-	   ß              [<ADJ><NN><NPROP><V>] |\
-	   ss             [<ADJ><NN><NPROP>] |\
-	   s:ß s:<SS>     <V> |\
-	   s:ß s:<SSalt>  <V> <OLDORTH>:<> |\
-	   s:ß s:<SSneu>  <V> <NEWORTH>:<> )
+$SS$ = .* ($T$                                      [<ADJ><NN><NPROP><V>] |\
+	   ß <SS>:<SS>    [#morpheme_boundary_marker#]* [<ADJ><NN><NPROP>] |\
+	   ß <SS>:<SSalt> [#morpheme_boundary_marker#]* [<ADJ><NN><NPROP>] <OLDORTH>:<> |\
+	   ß <SS>:<SSneu> [#morpheme_boundary_marker#]* [<ADJ><NN><NPROP>] <NEWORTH>:<> |\
+	   ß              [#morpheme_boundary_marker#]* [<ADJ><NN><NPROP><V>] |\
+	   ss             [#morpheme_boundary_marker#]* [<ADJ><NN><NPROP>] |\
+	   s:ß s:<SS>     [#morpheme_boundary_marker#]* <V> |\
+	   s:ß s:<SSalt>  [#morpheme_boundary_marker#]* <V> <OLDORTH>:<> |\
+	   s:ß s:<SSneu>  [#morpheme_boundary_marker#]* <V> <NEWORTH>:<> )
 
 $DefKompos$ = ($DefKomposADJ$ | $DefKomposNE$ |$DefKomposNN$ | $DefKomposV$ |\
 	 $DefStems-ss$) [<OLDORTH><NEWORTH>]? || $SS$
@@ -276,15 +293,22 @@ $DefKompos$ = $R$ || $DefKompos$
 $DefDeriv$ = $R$ || $DefDeriv$
 
 
-$BDKStems$ = $BDKStems$ | <>:<Stem> ($DefBaseADJ$ |\
+$BDKStems$ = $BDKStems$ | $BaseVElision$ | <>:<Stem> ($DefBaseADJ$ |\
    $DefDeriv$ <deriv> <>:<nativ> | $DefKompos$ <kompos> <>:<nativ>)
 
 % default stems for generating "Gejammer", "Gejammere", "Gejammre"
 
-$TMP$ = [#char# <e>]+ <V><deriv>:<base> || $BDKStems$ || (\
-  <Stem> <NoDef>:<>? <ge> [#char# <e>]+ \
-    (<>:e<V><base>:<deriv><nativ> [<VVReg><VVPres><VVPres1><VVPres1+Imp>]:<>|\
-     ({<e>l}:{<>le}|{<e>r}:{<>re}|<>:e)? \
-              <V><base>:<deriv><nativ><VVReg-el/er>:<>))
+$TMP$ = <ambig_gejammere>:<> [#char# <e> #morpheme_boundary_marker#]+ <V><deriv>:<base> || $BDKStems$ || (\
+  <Stem> <NoDef>:<>? <ge> [#char# <e> #morpheme_boundary_marker#]+ \
+    (<>:e<V><base>:<deriv-genom><nativ> [<VVReg><VVPres><VVPres1><VVPres1+Imp>]:<>|\
+     <>:e <V><base>:<deriv-genom><nativ><VVReg-el/er>:<>))
+
+$TMP$ = $TMP$ | (<ambig_gejammre>:<> [#char# <e> #morpheme_boundary_marker#]+ <V><deriv>:<base> || $BDKStems$ || (\
+  <Stem> <NoDef>:<>? <ge> [#char# <e> #morpheme_boundary_marker#]+ \
+     ({<e>l}:{<>le}|{<e>r}:{<>re}) <V><base>:<deriv-genom><nativ><VVReg-el/er>:<>))
+
+$TMP$ = $TMP$ | (<ambig_gejammer>:<> [#char# <e> #morpheme_boundary_marker#]+ <V><deriv>:<base> || $BDKStems$ || (\
+  <Stem> <NoDef>:<>? <ge> [#char# <e> #morpheme_boundary_marker#]+ \
+     <V><base>:<deriv-genom><nativ><VVReg-el/er>:<>))
 
 $BDKStems$ = $BDKStems$ | $TMP$

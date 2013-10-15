@@ -8,8 +8,6 @@
 #include "symbols.fst"
 
 
-$PHON$ = "<phon.a>"
-
 % read the morphemes
 
 $LEX$ = "lexicon/guesser.lex"
@@ -20,7 +18,9 @@ $LEX$ = ("<map1.a>" || $LEX$) || "<map2.a>"
 #include "flexion.fst"
 
 
-$TMP$ = $LEX$ || "<sufffilter.a>" || "<komposfilter.a>"
+$TMP$ = $LEX$
+#include "sufffilter.fst"
+$TMP$ = $TMP$ || "<komposfilter.a>"
 
 
 %**************************************************************************
@@ -46,7 +46,14 @@ $MORPH$ = "<elim-disj.a>" || "<elimX.a>" || $MORPH$
 %  application of phonological rules
 %**************************************************************************
 
-$MORPH$ = <GUESSER>:<WB> $MORPH$ <>:<WB> || $PHON$
+$InsertElisionMarker$ = <>
+
+#include "phon.fst"
+$MORPH$ = <GUESSER>:<> $MORPH$
+
+ALPHABET = [#char#] [#morpheme_boundary_marker#]:<>
+
+$MORPH$ = $MORPH$ || .*
 
 ALPHABET = [#char# #stemtype# #feature# <VPREF><VPART><QUANT><X><F><Old>]
 

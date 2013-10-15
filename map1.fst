@@ -16,7 +16,8 @@ ALPHABET = [#char# #category# #stemtype# #cap-trigger# #orth-trigger#] \
   <Ge-Nom><X><Old><F><SUFF><PPast><PPres> \
   n:<n> e:<e> d:<d> I:<I> \
   <>:[#origin# #complexity# #entry-type# #inflection# #Nom-class#]\
-  <>:[<Initial><NoHy><NoPref><NoDef><ge> <UL><SS><FB><QUANT><~n>] \
+  <>:[<Initial><NoHy><NoPref><NoDef><ge> <SS><FB><QUANT><~n>] \
+  <ambig_umlautung_temp>:<UL> \
   % disjunctive features
   <>:[<frei,fremd><frei,fremd,gebunden><frei,fremd,gebunden,kurz> \
   <fremd,gebunden,lang><frei,fremd,gebunden,lang><frei,fremd,kurz> \
@@ -46,7 +47,7 @@ $POS$ = [#POS#]
 $L$ = [#L#]
 $W$ = $L$+
 
-ALPHABET = [#char# #category# #stemtype# #cap-trigger# #orth-trigger#] <Ge-Nom><X><F> <PPast><PPres><Old><PREF><SUFF><VPART><VPREF>
+ALPHABET = [#char# #category# #stemtype# #cap-trigger# #orth-trigger#] <Ge-Nom><X><F> <PPast><PPres><Old><PREF><SUFF><VPART><VPREF><ambig_umlautung_temp>
 
 $T$ = $POS$ {<kompos><X>}:{} $L$ 
 $MAP1$ = $T$ _-> () || $MAP1$

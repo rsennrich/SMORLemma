@@ -7,7 +7,7 @@
 
 #include "symbols.fst"
 
-ALPHABET = [#char# #stemtype# #cap-trigger# #feature# \
+ALPHABET = [#char# #stemtype# #morpheme_boundary_marker# #cap-trigger# #feature# \
 <HYP><GUESSER><PREF><VPREF><VPART><QUANT><Old><X><F>] \
 [<1><3>]:<13> \
 [<Dat><Acc>]:<DA> \

@@ -1,0 +1,20 @@
+fst-compiler-utf8-epsilonfilter is a modified version of SFST's fst-compiler-utf8.
+
+The modification affects the composition operator (see operators.patch),
+which implements an epsilon-sequencing filter as described in:
+    Allauzen, C. Riley, M and Schalkwyk J. (2010): Filters for Efficient
+        Composition of Weighted Finite-State Transducers. CIAA 2010.
+
+The main purpose of the filter is to avoid redundant paths in the lemmatiser
+steps (which increases transducer size and the number of analyses returned by
+fst-infl2).
+
+If the program fails to execute on your machine, you can either modify the Makefile
+to use the normal version of fst-compiler-utf8 (which will cause redundant analyses
+with fst-infl2), or download and recompile SFST from source after applying the patch:
+
+  cd /path/to/SFST
+  patch src/operators.C /path/to/SMOR/sfst/operators.patch
+  patch src/fst.h /path/to/SMOR/sfst/fst.h.patch
+  make
+  cp src/fst-compiler-utf8 /path/to/SMOR/sfst/fst-compiler-utf8-epsilonfilter

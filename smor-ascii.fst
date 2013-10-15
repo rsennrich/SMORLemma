@@ -10,6 +10,6 @@ $TMP$ = [A-Za-z0-9\ \-] | {ß}:{ss}
 $TMP2$ = $TMP$ | [äöüÄÖÜ]:[aouAOU]<>:e
 $Filter$ = <NoHy>:<>? $TMP$* ([äöüÄÖÜ]:[aouAOU]<>:e) $TMP2$*
 
-$MORPH$ = "<morph2.a>" || $Filter$
+$MORPH$ = "<morph-lemma.a>" || $Filter$
 
 <ASCII>:<> $MORPH$

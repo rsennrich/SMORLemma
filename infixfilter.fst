@@ -12,7 +12,7 @@
 % insertion of the prefix "ge" controlled by the lexical marker <ge>
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-#tmp# = #surface-trigger# <^Ax><I><INS-E><NoHy><NoDef><CB><FB><UL><VPART> \
+#tmp# = #surface-trigger# #morpheme_boundary_marker# <^Ax><I><INS-E><NoHy><NoDef><CB><FB><UL><VPART> \
 	<Low#><Up#><Fix#> <^imp><^UC><^Ax><^pl><^Gen><^Del>
 
 $C1$ = [#char# #orth-trigger# #ss-trigger# #tmp# <zu><^zz>]
@@ -50,7 +50,7 @@ $ZU$ =  $C2$* |\
 % Imperatives have no separable prefixes
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-#tmp# = #surface-trigger# <^Ax><I><INS-E><NoHy><NoDef><FB><UL><^pl><^Gen><^Del>
+#tmp# = #surface-trigger# #morpheme_boundary_marker# <^Ax><I><INS-E><NoHy><NoDef><FB><UL><^pl><^Gen><^Del>
 
 
 $C1$ = [#char# #orth-trigger# #ss-trigger# #tmp#\

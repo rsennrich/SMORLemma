@@ -10,7 +10,7 @@
 % expression matching either a simplex word form
 % or the features of the last morphem
 
-#tmp# = #surface-trigger# <^Ax><I><Ge-Nom><INS-E><FB><VPART><UL>
+#tmp# = #surface-trigger# #morpheme_boundary_marker# <^Ax><I><Ge-Nom><INS-E><FB><VPART><UL>
 
 $C1$ = [#char# #orth-trigger# #deko-trigger# #ss-trigger# #tmp# \
      <FB><zu><Prefix>]
@@ -31,11 +31,11 @@ $TAIL$ = ($C1$* <Stem> $C1$* $C2$*)? $C3$* [#inflection#]?
 ALPHABET = [#char# #entry-type# #deko-trigger# #orth-trigger# #ss-trigger# \
 	    #tmp# #category-KSF# #stemtype# <FB><zu>]  $TAIL$ i:<>
 
-$X$ = (Phys|Anästhesi|Epidemi)
+$SF_X$ = (Phys|Anästhesi|Epidemi)
 $Y$ = <NN><deriv><gebunden>[<OLDORTH><NEWORTH>]? \
       <Suffix><gebunden><deriv><NN><UL>?
 
-$SUFFFILTER$ = ($X$) i <=> <> ($Y$ (ik|isch|ie))
+$SUFFFILTER$ = ($SF_X$) i <=> <> ([#morpheme_boundary_marker#]* $Y$ (ik|isch|ie))
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -88,6 +88,7 @@ $ANY$ = .*
 
 $FILTER$ = (\
 	<deriv>:<>  $B$ <deriv>:<> |\
+    <deriv-genom>:<>  $B$ <deriv-genom>:<> |\
 	<kompos>:<> $B$ <kompos>:<>)
 
 
@@ -129,18 +130,24 @@ ALPHABET = [#char# #entry-type# #deko-trigger# #orth-trigger# #ss-trigger#\
 
 $Cons$ = [BCDFGHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyzß]
 
-$TMP$ = [AOU]:[ÄÖÜ] | A:Ä (a:<> | u) | $Cons$ ([aou]:[äöü] | a:ä (a:<> | u))
+$SF_TMP$ = [AOU]:[ÄÖÜ] | A:Ä (a:<> | u) | $Cons$ ([aou]:[äöü] | a:ä (a:<> | u))
 
-$UMLAUTUNG$ =  .* ($TMP$? $Cons$* ([e<e>][rl])? [#ss-trigger#]? \
-	($B$ <UL>:<> .*)+)? $TAIL$
+$UMLAUTUNG$ =  .* ($SF_TMP$ $Cons$* ([e<e>][rl])? [#ss-trigger#]? [#morpheme_boundary_marker#]*\
+	($B$ <UL>:<> .*)+) $TAIL$
 
 $SUFFFILTER$ = $SUFFFILTER$ || $HERKUNFT$ || $STEMTYPE$ || $CATCHECK$
-$SUFFFILTER$ = $SUFFFILTER$ || $UMLAUTUNG$
 
-ALPHABET = [#char# #entry-type# #deko-trigger# #orth-trigger# #ss-trigger# #tmp# <zu>] $TAIL$ e:<>
+ALPHABET = [#char# #entry-type# #deko-trigger# #orth-trigger# #ss-trigger# #tmp# <zu>] $TAIL$
 
 % fieber+ig -> fiebrig
 $C$ = [bdfghklmnprstvwxz]
-$R$ = $C$ e => <> ([rl] [<OLDORTH><NEWORTH>]? <Suffix><UL>? ig<ADJ>)
+$R$ = (.* ($C$ e:<> [rl] [#morpheme_boundary_marker#]* [<OLDORTH><NEWORTH>]? <Suffix><UL>? ig<ADJ>)+ .*)+
 
-$SUFFFILTER$ || $R$
+
+ALPHABET = [#char# #cap-trigger# #feature# #stemtype#\
+    <SUFF><HYP><QUANT><Old><13><DA><GA><GD><GDA><MN><NA><NDA><NGA><NGDA><PA><F>] \
+    <PREF><VPREF><VPART><TRUNC><X>
+
+$TMP$ = $TMP$ || $SUFFFILTER$
+$TMP$ = ((.* <ambig_umlautung>:<ambig_umlautung_temp>* .*)* || ($TMP$ || $UMLAUTUNG$)) | $TMP$
+$TMP$ = $TMP$ | (($TMP$ || $R$) <ambig_e-elision-ig>:<>)

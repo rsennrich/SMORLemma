@@ -20,12 +20,3 @@ $Pro_Stems$ = "lexicon/pro.lex" || [A-ZÄÖÜa-zäöüß]+ $TMP$
 $TMP$ = ([#tmp#] | [<Attr><Subst>]:<Pro> | [<Pers><Refl>]:<Prfl>)*\
 
 $Pro_Stems$ = [A-ZÄÖÜa-zäöüß]+ <CAP>? {<PRO><base><X>}:{} $TMP$ || $Pro_Stems$
-
-
-% elimination of spurious ambiguities
-
-$TMP$ = [#tmp# <WeakGen> <CAP><PRO><base><X>]:<>*
-
-ALPHABET = $Pro_Stems$
-
-$Pro_Stems$ = $Pro_Stems$ & ([A-ZÄÖÜa-zäöüß]:. | .:[A-ZÄÖÜa-zäöüß])+ $TMP$

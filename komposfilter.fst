@@ -7,7 +7,7 @@
 
 #include "symbols.fst"
 
-#tmp# = #surface-trigger# <^Ax><I><Ge-Nom><INS-E><FB><VPART><UL>
+#tmp# = #surface-trigger# #morpheme_boundary_marker# <^Ax><I><Ge-Nom><INS-E><FB><VPART><UL>
 
 
 % deletes base stem and compound stem features

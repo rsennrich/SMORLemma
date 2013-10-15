@@ -1,0 +1,162 @@
+diff --git a/operators.C b/operators.C
+index 1262327..901a495 100644
+--- a/operators.C
++++ b/operators.C
+@@ -91,7 +91,7 @@ namespace SFST {
+   };
+   
+ 
+-  static void compose_nodes( Node*, Node*, Node*, Transducer*, PairMapping&,
++  static void compose_nodes( Node*, Node*, Node*, Transducer*, PairMappingStateful&, int,
+ 			     CharNode2Trans&, CharNode2Trans& );
+ 
+   
+@@ -759,7 +759,8 @@ namespace SFST {
+   /*******************************************************************/
+ 
+   static void add_transition( Label l, Node *n1, Node *n2, Node *node, 
+-			      Transducer *a, PairMapping &map, 
++			      Transducer *a, PairMappingStateful &map, 
++			      int epsilon_filter_state,
+ 			      CharNode2Trans &cn2trans1, 
+ 			      CharNode2Trans &cn2trans2 )
+   
+@@ -768,7 +769,7 @@ namespace SFST {
+     // 	    n1->index, n2->index, a->alphabet.write_label(l));
+ 
+     // Check whether this node pair has been encountered before
+-    PairMapping::iterator it=map.find(n1, n2);
++    PairMappingStateful::iterator it=map.find(n1, n2, epsilon_filter_state);
+   
+     if (it != map.end()) {
+       // add an arc to the already existing target node 
+@@ -780,13 +781,14 @@ namespace SFST {
+     Node *target_node = a->new_node();
+   
+     // map the target node pair to the new node
+-    map[pair<Node*,Node*>(n1,n2)] = target_node;
++	pair<Node*,Node*> inner_pair = std::make_pair(n1,n2);
++    map[pair<pair<Node*,Node*>,int>(inner_pair,epsilon_filter_state)] = target_node;
+   
+     // add an arc to the new node
+     node->add_arc( l, target_node, a );
+   
+     // recursion
+-    compose_nodes( n1, n2, target_node, a, map, cn2trans1, cn2trans2 );
++    compose_nodes( n1, n2, target_node, a, map, epsilon_filter_state, cn2trans1, cn2trans2 );
+   }
+ 
+ 
+@@ -797,7 +799,7 @@ namespace SFST {
+   /*******************************************************************/
+ 
+   static void compose_nodes( Node *n1, Node *n2, Node *node, Transducer *a, 
+-			     PairMapping &map, CharNode2Trans &cn2trans1,
++			     PairMappingStateful &map, int epsilon_filter_state, CharNode2Trans &cn2trans1,
+ 			     CharNode2Trans &cn2trans2 )
+   {
+     // fprintf(stderr,"A%u || B%u\n",n1->index,n2->index);
+@@ -823,8 +825,10 @@ namespace SFST {
+ 	Character uc1=l1.upper_char();
+ 	Character lc1=l1.lower_char();
+ 
+-	if (uc1 == Label::epsilon)
+-	  add_transition( l1, t1, n2, node, a, map, cn2trans1, cn2trans2 );
++	if (uc1 == Label::epsilon) {
++	  if (epsilon_filter_state == 0) {
++	      add_transition( l1, t1, n2, node, a, map, 0, cn2trans1, cn2trans2 );
++	}}
+ 	
+ 	else {
+ 	  // iterate over the matching outgoing arcs of the second node
+@@ -836,8 +840,7 @@ namespace SFST {
+ 	      Label l2=arc2->label();
+ 	      assert(uc1 == l2.lower_char());
+ 	      Character uc2=l2.upper_char();
+-	    
+-	      add_transition( Label(lc1,uc2), t1, t2, node, a, map, 
++	      add_transition( Label(lc1,uc2), t1, t2, node, a, map, 0,
+ 			      cn2trans1, cn2trans2 );
+ 	  }
+ 	}
+@@ -851,7 +854,7 @@ namespace SFST {
+ 	  Node *t2 = arc2->target_node();
+ 	  Label l=arc2->label();
+ 	  assert(l.lower_char() == Label::epsilon);
+-	  add_transition( l, n1, t2, node, a, map, cn2trans1, cn2trans2 );
++	  add_transition( l, n1, t2, node, a, map, 1, cn2trans1, cn2trans2 );
+ 	}
+     }
+ 
+@@ -864,8 +867,9 @@ namespace SFST {
+ 	Character uc2=l2.upper_char();
+ 	Character lc2=l2.lower_char();
+ 
+-	if (lc2 == Label::epsilon)
+-	  add_transition( l2, n1, t2, node, a, map, cn2trans1, cn2trans2 );
++	if (lc2 == Label::epsilon){
++	  add_transition( l2, n1, t2, node, a, map, 1, cn2trans1, cn2trans2 );
++	}
+ 	
+ 	else {
+ 	  // iterate over the matching outgoing arcs of the first node
+@@ -877,23 +881,24 @@ namespace SFST {
+ 	      Label l1=arc1->label();
+ 	      assert(l1.upper_char() == lc2);
+ 	      Character lc1=l1.lower_char();
+-	    
+-	      add_transition( Label(lc1,uc2), t1, t2, node, a, map, 
++	      add_transition( Label(lc1,uc2), t1, t2, node, a, map, 0,
+ 			      cn2trans1, cn2trans2 );
+ 	  }
+ 	}
+       }
+ 
+       // epsilon output characters of the first Transducer
+-      for( CharNode2Trans::iterator it(cn2trans1, n1->index, Label::epsilon );
+-	   !it.finished(); it++ )
+-	{
+-	  Arc *arc1 = *it;
+-	  Node *t1 = arc1->target_node();
+-	  Label l=arc1->label();
+-	  assert(l.upper_char() == Label::epsilon);
+-	  add_transition( l, t1, n2, node, a, map, cn2trans1, cn2trans2 );
+-	}
++	for( CharNode2Trans::iterator it(cn2trans1, n1->index, Label::epsilon );
++		!it.finished(); it++ )
++		{
++		Arc *arc1 = *it;
++		Node *t1 = arc1->target_node();
++		Label l=arc1->label();
++		assert(l.upper_char() == Label::epsilon);
++		if (epsilon_filter_state == 0) {
++			add_transition( l, t1, n2, node, a, map, 0, cn2trans1, cn2trans2 );
++		}
++      }
+     }
+   }
+ 
+@@ -907,19 +912,20 @@ namespace SFST {
+   Transducer &Transducer::operator||( Transducer &a )
+ 
+   {
+-    PairMapping map;
++    PairMappingStateful map;
+     
+     Transducer *na = new Transducer();
+     na->alphabet.compose(alphabet, a.alphabet);
+ 
+     // map the two root nodes to the new root node
+-    map[pair<Node*,Node*>(root_node(), a.root_node())] = na->root_node();
++    pair<Node*,Node*> inner_pair = std::make_pair(root_node(), a.root_node());
++    map[pair<pair<Node*,Node*>,int>(inner_pair, 0)] = na->root_node();
+ 
+     // recursively compose the two automata
+     CharNode2Trans cn2trans1(*this);
+     CharNode2Trans cn2trans2(a);
+     compose_nodes( root_node(), a.root_node(), na->root_node(), 
+-		   na, map, cn2trans1, cn2trans2 );
++		   na, map, 0, cn2trans1, cn2trans2 );
+ 
+     return *na;
+   }

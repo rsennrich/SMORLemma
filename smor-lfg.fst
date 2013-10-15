@@ -5,8 +5,10 @@
 %  Content:      adds hyphenated forms
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-$MORPH$ = "<morph.a>"
+$MORPH$ = "<morph-lemma.a>"
 
+
+#include "symbols.fst"
 
 %**************************************************************************
 % hyphenated words
@@ -15,7 +17,7 @@ $MORPH$ = "<morph.a>"
 % blanks not allowed at the beginning or at the end
 $L$ = [A-ZÀÈÌÒÙÁÉÍÚÓÂÊÎÔÛÄËÖÜ]
 $l$ = [a-zàèìòùáéíúóâêîôûäëöüßçñ]
-$ANY$ = [\"\,\.\;§\$\?\!\'\&\+\%\*½²°\:\(\)0-9\/\<\>] | $L$ | $l$
+$ANY$ = [\"\,\.\;§\$\?\!\'\&\+\%\*½²°\:\(\)0-9\/\<\> #morpheme_boundary_marker#] | $L$ | $l$
 $ANYB$ = \  | $ANY$
 $ANYB-$ = \- | $ANYB$
 $TMP$ = $ANY$ ($ANYB$* $ANY$)?

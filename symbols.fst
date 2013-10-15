@@ -19,6 +19,8 @@
 
 #cap-trigger# = <UC><LC><CAP><DECAP>
 
+#morpheme_boundary_marker# = <\~><#><\->
+
 #marker# = <PPast><PPres><PREF><SUFF><CAP><DECAP>
 
 #deko-trigger# = <Initial><NoHy><NoPref><NoDef><ge><no-ge>
@@ -35,16 +37,21 @@
 
 #case# = <Nom><Gen><Dat><Acc>
 
-#feature# = #case# #gender# #category# #part-of-speech# #orth-trigger# \
-   <1><2><3> <Sg><Pl> <Def><Indef> <St><Wk> <Pos><Comp><Sup> \
+% features on analysis side whose only purpose is to ensure one-to-one-mapping from analysis to word form (to prevent overgeneration)
+#ambig# = <ambig-KomposNomSg><ambig-KomposGenSg><ambig-KomposNomPl><ambig-KomposGenSg-e-elision> \
+   <ambig-KomposFemFugS><ambig-KomposAdjElision><ambig-e-elisionGen><ambig_umlautung> \
+   <ambig-e-elisionVerb><ambig_gejammer><ambig_gejammre><ambig_gejammere><ambig_e-elision-ig>
+
+#feature# = #case# #gender# #category# #part-of-speech# #orth-trigger# #ambig# \
+   <1><2><3> <Sg><Pl> <Def><Indef> <St><Wk><St/Wk> <Pos><Comp><Sup> \
    <Pred><Attr><Subst><Pro> <PPres><PPast> <Pres><Past> <Imp><Ind><Inf><Subj> \
    <Pers><Prfl><Refl><Rec><Right><Left> <Sub><Coord><Compar> \
    <^ABBR><^VPRES><^VPAST> <Norm><Comma> <Neg><Adj><Ans><Adv> \
-   <Ge-Nom><ProAdv><Simp><WeakGen><Invar><SUFF><zu>
+   <Ge-Nom><ProAdv><Simp><WeakGen><Invar><SUFF><zu> \
 
 #entry-type# = <Stem><Suffix><Prefix>
 
-#stemtype# = <base><deriv><kompos>
+#stemtype# = <base><deriv><kompos><deriv-genom>
 
 #origin# = <nativ><frei><gebunden><kurz><lang><lang2><fremd><klassisch>
 

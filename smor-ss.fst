@@ -11,6 +11,6 @@ $TMP$ = [A-ZÄÖÜa-zäöü0-9\ \-]
 $TMP2$ = $TMP$ | {ß}:{ss}
 $Filter$ = <NoHy>:<>? $TMP$* {<>ß}:{ss} $TMP2$*
 
-$MORPH$ = "<morph2.a>" || $Filter$
+$MORPH$ = "<morph-lemma.a>" || $Filter$
 
 <SS>:<> $MORPH$

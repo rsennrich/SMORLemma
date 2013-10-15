@@ -530,16 +530,16 @@ $Name-Pl_x$ =   {<+NPROP><NoGend>}:{}    $NPl_x$
 % Adjectives
 % =======================================================================
 
-$TMP$ =         {<Fem><NA><Sg>}:{e}      |\
+$TMP$ =         {<Fem><NA><Sg><St/Wk>}:{e}      |\
                 {<Masc><Nom><Sg><Wk>}:{e} |\
                 {<Neut><NA><Sg><Wk>}:{e} |\
                 {<NoGend><NA><Pl><St>}:{e} |\
                 {<MN><Dat><Sg><St>}:{em} |\
                 {<Fem><Gen><Sg><Wk>}:{en} |\
-                {<MN><Gen><Sg>}:{en}     |\
-                {<Masc><Acc><Sg>}:{en}   |\
+                {<MN><Gen><Sg><St/Wk>}:{en}     |\
+                {<Masc><Acc><Sg><St/Wk>}:{en}   |\
                 {<NoGend><Dat><Sg><Wk>}:{en} |\
-                {<NoGend><Dat><Pl>}:{en} |\
+                {<NoGend><Dat><Pl><St/Wk>}:{en} |\
                 {<NoGend><NGA><Pl><Wk>}:{en} |\
                 {<Fem><GD><Sg><St>}:{er} |\
                 {<Masc><Nom><Sg><St>}:{er} |\
@@ -1321,7 +1321,7 @@ $FLEXION$ = <>:<Abk_ADJ>        $Abk_ADJ$ |\
 % definition of a filter which enforces the correct inflection %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-ALPHABET = [#char# #orth-trigger# #ss-trigger# #surface-trigger#] <FB><VPART> \
+ALPHABET = [#char# #orth-trigger# #ss-trigger# #surface-trigger# #morpheme_boundary_marker#] <FB><VPART> \
            <^Ax><I><Ge-Nom><UL><NoHy><ge><zu><no-ge><CB> \
            <INS-E><^imp><^zz><ge><^pp><^pl><^Gen><^Del><Fix#><Low#><Up#> \
            [#entry-type#]

@@ -7,8 +7,8 @@
 
 #include "symbols.fst"
 
-$MORPH$ = "<morph2.a>"
+$MORPH$ = "<morph-lemma.a>"
 
 % capitalise the first character
-<CAP>:<> $MORPH$ || <NoHy>:<>? [a-zà-þ]:[A-ZÀ-Þ] [#char#]*
+<CAP>:<> $MORPH$ || <NoHy>:<>? [a-zà-þ]:[A-ZÀ-Þ] [#char# #morpheme_boundary_marker#]*
 

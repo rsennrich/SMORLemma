@@ -7,8 +7,6 @@
 
 #include "symbols.fst"
 
-$PHON$ = "<phon.a>"
-
 % define a transducer for numeric morphemes
 #include "NUM.fst"
 
@@ -32,7 +30,7 @@ $LEX$ = ("<map1.a>" || $LEX$ || "<map2.a>") [<OLDORTH><NEWORTH>]? || "<map3.a>"
 %**************************************************************************
 
 ALPHABET = [#char# #category-KSF# #stemtype# #origin# #inflection# #Nom-class#\
-	 #ss-trigger# #surface-trigger#] <FB><^Ax><I><Ge-Nom><UL><VPART> \
+	 #ss-trigger# #surface-trigger# #morpheme_boundary_marker#] <FB><^Ax><I><Ge-Nom><UL><VPART> \
 	 <Initial><NoHy><ge><no-ge><zu><NoPref>
 
 
@@ -84,15 +82,29 @@ $QSuffs$ = $X$ $QuantSuffixes$ ($X$ $SuffDerivSuffixes$)*
 
 % dreistündig, 3stündig, 3-stündig, Mehrfarbigkeit, Vierfarbdrucker
 $NounCompStems$ = $BDKStems$ || $NounCompFilter$
-$Sx$ = $BDKStems$ $QSuffs$ ||  "<sufffilter.a>"
+$Sx$ = $BDKStems$ $QSuffs$
+
+$TMP$ = $Sx$
+#include "sufffilter.fst"
+$Sx$ = $TMP$
+
 $Sx$ = $NumPref$ $X$ ($Sx$ | $NounCompStems$)
 $Sx$ = $Sx$ || "<preffilter.a>"
 
-$S0$ = $BDKStems$ $Suffs1$ || "<sufffilter.a>"
+$S0$ = $BDKStems$ $Suffs1$
+
+$TMP$ = $S0$
+#include "sufffilter.fst"
+$S0$ = $TMP$
 
 $P1$ = $Prefixes$ $X$ $S0$ || "<preffilter.a>"
 
-$S1$ = $P1$ $Suffs2$ || "<sufffilter.a>"
+$S1$ = $P1$ $Suffs2$
+
+$TMP$ = $S1$
+#include "sufffilter.fst"
+$S1$ = $TMP$
+
 $P1$ = <>
 
 $TMP$ = $S0$ | $S1$ | $Sx$
@@ -106,7 +118,6 @@ $TMP$ = $T$* $TMP$
 $T$ = <>
 
 $TMP$ = $TMP$ || "<komposfilter.a>"
-
 
 %**************************************************************************
 % add inflection and filter out incorrect combinations of stems and infl.
@@ -128,6 +139,15 @@ $MORPH$ = $Fix_Stems$ | $Pro_Stems$ | $MORPH$
 %  application of phonological rules
 %**************************************************************************
 
-$MORPH$ = <>:<WB> $MORPH$ <>:<WB> || $PHON$
+$InsertElisionMarker$ = <>
 
-$MORPH$ % || <NoHy>:<>? [#char#]*
+#include "phon.fst"
+
+ALPHABET = [#char# #cap-trigger# #feature# #stemtype#\
+    <SUFF><HYP><QUANT><Old><13><DA><GA><GD><GDA><MN><NA><NDA><NGA><NGDA><PA><F>] \
+    <PREF><VPREF><VPART><TRUNC><X>
+
+%filter: el/er e-elision can only happen if next morpheme starts with "eui"
+$ANALYSIS_FILTER$ = ([^<ambig-e-elisionVerb><ambig_umlautung_temp>]* (<ambig-e-elisionVerb> [#stemtype# <X> #feature#]+ ([EUIeui] | <+V><1><Sg><Pres>))* [^<ambig-e-elisionVerb><ambig_umlautung_temp>]*)*
+
+$ANALYSIS_FILTER$ || $MORPH$

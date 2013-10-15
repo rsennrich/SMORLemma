@@ -1,0 +1,43 @@
+diff --git a/fst.h b/fst.h
+index 1f2b213..b16e7b7 100644
+--- a/fst.h
++++ b/fst.h
+@@ -218,6 +218,38 @@ namespace SFST {
+   
+   };
+ 
++  /*****************  class PairMappingStateful  ****************************/
++
++  class PairMappingStateful {
++    // This class is used to map a node pair from two transducers
++    // to a single node in another transducer, while also checking whether the epsilon filter state is identical.
++
++    typedef std::pair<std::pair<Node*, Node*>,int> NodePairStateful;
++
++  private:
++    struct hashf {
++      size_t operator()(const NodePairStateful p) const { 
++	return (size_t)p.first.first ^ (size_t)p.first.second ^(size_t)p.second;
++      }
++    };
++    struct equalf {
++      int operator()(const NodePairStateful p1, const NodePairStateful p2) const {
++	return (p1.first.first==p2.first.first && p1.first.second == p2.first.second && p1.second == p2.second);
++      }
++    };
++    typedef hash_map<NodePairStateful, Node*, hashf, equalf> PairMapStateful;
++    PairMapStateful pm;
++  
++  public:
++    typedef PairMapStateful::iterator iterator;
++    iterator begin( void ) { return pm.begin(); };
++    iterator end( void ) { return pm.end(); };
++    iterator find( Node *n1, Node *n2, int i )
++    { return pm.find( NodePairStateful(std::make_pair(n1,n2), i) ); };
++    Node* &operator[]( NodePairStateful p ) { return pm.operator[](p); };
++  
++  };
++
+ 
+   /*****************  class Transducer  *******************************/
+ 
