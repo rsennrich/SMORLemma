@@ -87,33 +87,33 @@ $NDF$ = [#char#]*
 ALPHABET = _$TMP$
 
 $DefKomposNN$ = \
-(.+ {}:{<NN><base>} \
+(. . .+ {}:{<NN><base>} \
  ($AN$ {}:{<+NN>[<Masc><Neut><NoGend>] <Nom><Sg>} |\
   $AN$ {}:{<+NN>[<Masc><Neut>] <Gen><Sg>} |\
   $AN$ {}:{<+NN>[#gender#] <Nom><Pl>} <>:<Wk>?) || $TMP$ ||$NDF$)\
 <NN>
 
 $DefKomposNN$ = $DefKomposNN$ | \
-(.+ {}:{<NN><SUFF><base>} \
+(. . .+ {}:{<NN><SUFF><base>} \
  ($AN$ {}:{<+NN>[<Masc><Neut><NoGend>] <Nom><Sg>} |\
   $AN$ {}:{<+NN>[<Masc><Neut>] <Gen><Sg>} |\
   $AN$ {}:{<+NN>[#gender#] <Nom><Pl>} <>:<Wk>?) || $TMP$ ||$NDF$)\
 <NN><SUFF>:<>
 
 $DefKomposNPROP$ = \
-(.+ {}:{<NPROP><base>} \
+(. . .+ {}:{<NPROP><base>} \
  ($AN$ {}:{<+NPROP>[#gender#] <Nom><Sg>} |\
   $AN$ {}:{<+NPROP>[<Masc><Neut>] <Gen><Sg>} |\
   $AN$ {}:{<+NN>[#gender#] <Nom><Pl>} <>:<Wk>?) || $TMP$ ||$NDF$)\
 <NN>
 
 $DefKomposNNfem$ = \
-(.+ {}:{<NN><base>} \
+(. . .+ {}:{<NN><base>} \
  ($AN$ {}:{<+NN><Fem><Nom><Sg>}) || $TMP$ ||$NDF$)\
 <NN>
 
 $DefKomposNNfem$ = $DefKomposNNfem$ | \
-(.+ {}:{<NN><SUFF><base>} \
+(. . .+ {}:{<NN><SUFF><base>} \
  ($AN$ {}:{<+NN><Fem><Nom><Sg>}) || $TMP$ ||$NDF$)\
 <NN><SUFF>:<>
 
