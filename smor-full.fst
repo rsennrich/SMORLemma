@@ -12,9 +12,11 @@ ALPHABET = [#char# #morpheme_boundary_marker# #part-of-speech# #category# #featu
 $ss$ = {ß}:{ss} ^->? (__ .?)
 % replacement of umlaut
 $umlaut$ = [äöüÄÖÜ]:[aouAOU]<>:e ^->? (__ .?)
-
-$CAP$ = <CAP>:<> "<smor.a>" || <NoHy>:<>? [a-zà-þ]:[A-ZÀ-Þ] [#char# #morpheme_boundary_marker#]*
+%capitalization
+$CAP$ = [^<TRUNC>]* || <CAP>:<> "<smor.a>" || <NoHy>:<>? [a-zà-þ]:[A-ZÀ-Þ] [#char# #morpheme_boundary_marker#]*
 
 $MORPH$ = "<smor.a>" | $CAP$ | "<smor-guesser.a>"
 
-$MORPH$ || $ss$ || $umlaut$
+$VARMORPH$ = [^<TRUNC>]* || $MORPH$ || $ss$ || $umlaut$
+
+$MORPH$ | $VARMORPH$
