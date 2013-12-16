@@ -18,13 +18,10 @@ $remove_CB_from_surface$ = .*
 ALPHABET = _$MORPH$
 
 %which form to use as lemma
-$nounlemma$ = ((.*<>:<+NN><>:<Masc><>:<Nom><>:<Sg> || $MORPH$) <+NN><Masc>) |\
-              ((.*<>:<+NN><>:<Fem><>:<Nom><>:<Sg> || $MORPH$) <+NN><Fem>) |\
-              ((.*<>:<+NN><>:<Neut><>:<Nom><>:<Sg> || $MORPH$) <+NN><Neut>) |\
-              ((.*<>:<+NN><>:<NoGend><>:<Nom><>:<Pl> || $MORPH$) <+NN><NoGend>) | \ % plural noun: use Nom. Pl. for lemma
-              ((.*{<ADJ><SUFF><SUFF>}:{<SUFF><+ADJ>}<>:<Pos><>:[<Adv><Invar><Pred>] || $MORPH$) <+NN>) |\ % nouns derived from particples "Lesende"
-              ((.*{<ADJ><SUFF>}:<+ADJ><>:<Pos><>:[<Adv><Invar><Pred>] || $MORPH$) <+NN>) |\ % nouns derived from adjective: "Kleine"
-              ((.*<ORD><SUFF><>:<+NN><>:<Masc><>:<Nom><>:<Sg><>:<Wk> || $MORPH$) <+NN>) |\ % nouns derived from ordinal: "Zweite"
+$nounlemma$ = ((.*<>:<+NN><>:<Masc><>:<Nom><>:<Sg><>:<St>? || $MORPH$) <+NN><Masc>) |\
+              ((.*<>:<+NN><>:<Fem><>:<Nom><>:<Sg><>:<St/Wk>? || $MORPH$) <+NN><Fem>) |\
+              ((.*<>:<+NN><>:<Neut><>:<Nom><>:<Sg><>:<St>? || $MORPH$) <+NN><Neut>) |\
+              ((.*<>:<+NN><>:<NoGend><>:<Nom><>:<Pl><>:<St>? || $MORPH$) <+NN><NoGend>) | \ % plural noun: use Nom. Pl. for lemma
               ((.*<>:<+NPROP><>:<Masc><>:<Nom><>:<Sg> || $MORPH$) <+NPROP><Masc>) |\
               ((.*<>:<+NPROP><>:<Fem><>:<Nom><>:<Sg> || $MORPH$) <+NPROP><Fem>) |\
               ((.*<>:<+NPROP><>:<Neut><>:<Nom><>:<Sg> || $MORPH$) <+NPROP><Neut>) |\
