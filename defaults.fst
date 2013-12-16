@@ -90,29 +90,29 @@ $NDF$ = [#char# #morpheme_boundary_marker#]*
 
 ALPHABET = _$TMP$
 
-$DefKomposNN$ = ^(.+ <NN><base> $AN$ \
+$DefKomposNN$ = ^(. . .+ <NN><base> $AN$ \
     (<+NN>[<Masc><Neut><NoGend>] <Nom><Sg> |\
      <+NN>[<Masc><Neut>] <Gen><Sg><ambig-e-elisionGen>? |\
      <+NN>[#gender#] <Nom><Pl> <>:<Wk>?) || $TMP$ || $NDF$)\
 <NN>
 
-$DefKomposNN$ = $DefKomposNN$ | ^(.+ <NN><SUFF><base> $AN$ \
+$DefKomposNN$ = $DefKomposNN$ | ^(. . .+ <NN><SUFF><base> $AN$ \
     (<+NN>[<Masc><Neut><NoGend>] <Nom><Sg> |\
      <+NN>[<Masc><Neut>] <Gen><Sg><ambig-e-elisionGen>? |\
      <+NN>[#gender#] <Nom><Pl> <>:<Wk>?) || $TMP$ || $NDF$)\
 <NN><SUFF>:<>
 
-$DefKomposNPROP$ = ^(.+ <NPROP><base> $AN$ \
+$DefKomposNPROP$ = ^(. . .+ <NPROP><base> $AN$ \
     (<+NPROP>[#gender#] <Nom><Sg> |\
      <+NPROP>[<Masc><Neut>] <Gen><Sg><ambig-e-elisionGen>? |\
      <+NPROP>[#gender#] <Nom><Pl> <>:<Wk>?) || $TMP$ || $NDF$)\
 <NN>
 
-$DefKomposNNfem$ = ^(.+ <NN><base> $AN$ <+NN><Fem><Nom><Sg> || $TMP$ || $NDF$)\
+$DefKomposNNfem$ = ^(. . .+ <NN><base> $AN$ <+NN><Fem><Nom><Sg> || $TMP$ || $NDF$)\
 <NN>
 
 $DefKomposNNfem$ = $DefKomposNNfem$ | \
-                   ^(.+ <NN><SUFF><base> $AN$ <+NN><Fem><Nom><Sg> || $TMP$ || $NDF$)\
+                   ^(. . .+ <NN><SUFF><base> $AN$ <+NN><Fem><Nom><Sg> || $TMP$ || $NDF$)\
 <NN><SUFF>:<>
 
 % Add Fugen-s to the following feminine compounding stems
