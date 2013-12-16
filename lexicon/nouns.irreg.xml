@@ -37,4 +37,19 @@
                 <Origin>fremd</Origin>
                 <InfClass>NMasc/Pl</InfClass>
         </BaseStem>
+<!-- nouns with adjective declination. Currently not handled by Zmorge -->
+         <BaseStem>
+                <Lemma>Beamte</Lemma>
+                <Stem>Beamte</Stem>
+                <Pos>NN</Pos>
+                <Origin>nativ</Origin>
+                <InfClass>NMasc-Adj</InfClass>
+        </BaseStem>
+         <BaseStem>
+                <Lemma>Gefreite</Lemma>
+                <Stem>Gefreite</Stem>
+                <Pos>NN</Pos>
+                <Origin>nativ</Origin>
+                <InfClass>NMasc-Adj</InfClass>
+        </BaseStem>
 </smor>
