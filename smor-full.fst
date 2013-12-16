@@ -17,6 +17,4 @@ $CAP$ = [^<TRUNC>]* || <CAP>:<> "<smor.a>" || <NoHy>:<>? [a-zà-þ]:[A-ZÀ-Þ] [
 
 $MORPH$ = "<smor.a>" | $CAP$ | "<smor-guesser.a>"
 
-$VARMORPH$ = [^<TRUNC>]* || $MORPH$ || $ss$ || $umlaut$
-
-$MORPH$ | $VARMORPH$
+$MORPH$ || $ss$ || $umlaut$
