@@ -38,7 +38,7 @@ smor-gen.a: smor.a
 
 simple-morph.a: phon.a elim-disj.a simple-lexicon
 
-smor-full.a: smor.a smor-guesser.a
+smor-full.a: morph-lemma.a smor-guesser.a
 
 lexicon/lexicon: lexicon/adj.irreg.lex lexicon/adpositions.closed.lex lexicon/nouns.irreg.xml lexicon/verbs.irreg.lex lexicon/affix.lex lexicon/compile_lexicon.py lexicon/wiki-lexicon.xml
 	python lexicon/compile_lexicon.py
