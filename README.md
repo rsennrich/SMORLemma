@@ -3,6 +3,8 @@ SMORLemma - An alternative lemmatization for the Stuttgart Morphological Analyze
 
 This project contains a modified version of SMOR, the Stuttgart Morphological Analyzer: http://www.cis.uni-muenchen.de/~schmid/tools/SMOR/
 
+Compiled morphology tools based on the Zmorge lexicon and this grammar can be downloaded from http://kitt.ifi.uzh.ch/kitt/zmorge/
+
 the master branch contains the following modifications:
 
 - the grammar and lexicon are converted to UTF-8
