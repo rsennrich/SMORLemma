@@ -98,3 +98,9 @@ SMOR is described in:
 Helmut Schmid, Arne Fitschen, and Ulrich Heid. 2004:
    A German computational morphology covering derivation, composition, and inflection. 
    In Proceedings of the IVth International Conference on Language Resources and Evaluation (LREC 2004), pages 1263–1266.
+
+the alternative lemmatisation is described in:
+
+Rico Sennrich and Beat Kunz. 2014:
+   Zmorge: A German Morphological Lexicon Extracted from Wiktionary.
+   In Proceedings of the 9th International Conference on Language Resources and Evaluation (LREC 2014).
