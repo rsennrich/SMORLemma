@@ -87,10 +87,10 @@
 <ge>müsse:<>n:<><VIrreg>:<VMPastKonj>
 
 % müssen, old spelling:
-<ge>mü:us:ßs:<>e:<>n:<><VIrreg>:<VMPresSg>
-<ge>müs:ßs:<>e:<>n:<><VIrreg>:<VMPresPl>
-<ge>mü:us:ßs:<>e:<>n:<><VIrreg>:<VMPast>
-<ge>müs:ßs:<>e:<>n:<><VIrreg>:<VMPastKonj>
+<ge>mü:us:ßs:<>e:<>n:<><OLDORTH><VIrreg>:<VMPresSg>
+<ge>müs:ßs:<>e:<>n:<><OLDORTH><VIrreg>:<VMPresPl>
+<ge>mü:us:ßs:<>e:<>n:<><OLDORTH><VIrreg>:<VMPast>
+<ge>müs:ßs:<>e:<>n:<><OLDORTH><VIrreg>:<VMPastKonj>
 
 % sollen:
 <ge>solle:<>n:<><VIrreg>:<VMPresSg>
@@ -536,7 +536,7 @@ gewi:onne:<>n:<><VIrreg>:<VVPP-en>
 <ge>lasse:<>n:<><VIrreg>:<VVPP-en>
 
 %old spelling
-<ge>la:äs:ßs:<>e:<>n:<><VIrreg>:<VVPres2>
+<ge>la:äs:ßs:<>e:<>n:<><OLDORTH><VIrreg>:<VVPres2>
 
 <ge>laufe:<>n:<><VIrreg>:<VVPres1+Imp>
 <ge>la:äufe:<>n:<><VIrreg>:<VVPres2>

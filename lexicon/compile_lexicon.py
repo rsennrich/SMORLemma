@@ -31,11 +31,19 @@ for sublexicon, POS in sublexica:
         entry = line.split(' %')[0].strip()
         stem = [tag for tag in tag_extract.split(entry) if tag][0] # first non-empty non-tag string is stem
         tags = tag_extract.findall(entry)
+        orth = ''
 
         if '<ge>' in tags:
             stem = '<ge>' + stem
 
-        entry = '<Stem>{0}<{1}><base><nativ>{2}'.format(stem, POS, tags[-1])
+        if '<OLDORTH>' in tags:
+          orth = '<OLDORTH>'
+          tags.remove('<OLDORTH>')
+        elif '<NEWORTH>' in tags:
+          orth = '<NEWORTH>'
+          tags.remove('<NEWORTH>')
+
+        entry = '<Stem>{0}{1}<{2}><base><nativ>{3}'.format(stem, orth, POS, tags[-1])
 
         lexicon.write(entry + '\n')
 
