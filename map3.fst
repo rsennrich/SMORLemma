@@ -19,5 +19,5 @@ $T$ = e <=> <e> ([lr] <V><base><nativ><VVReg-el/er>)
 
 ALPHABET = $X$
 
-$T$ || .* (<SS> .* | <SS>:<SSalt> .* <OLDORTH>:<> |\
+$T$ || .* (<SS> .* | <SS>:<SSalt> .* <OLDORTH> |\
                      <SS>:<SSneu> .* <NEWORTH>:<>)?
