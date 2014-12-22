@@ -18,15 +18,15 @@ $remove_CB_from_surface$ = .*
 ALPHABET = _$MORPH$
 
 %which form to use as lemma
-$nounlemma$ = (([^<OLDORTH>]*<OLDORTH>:<>?<>:<+NN><>:<Masc><>:<Nom><>:<Sg><>:<St>? || $MORPH$) <+NN><Masc>) |\
-              (([^<OLDORTH>]*<OLDORTH>:<>?<>:<+NN><>:<Fem><>:<Nom><>:<Sg><>:<St/Wk>? || $MORPH$) <+NN><Fem>) |\
-              (([^<OLDORTH>]*<OLDORTH>:<>?<>:<+NN><>:<Neut><>:<Nom><>:<Sg><>:<St>? || $MORPH$) <+NN><Neut>) |\
-              (([^<OLDORTH>]*<OLDORTH>:<>?<>:<+NN><>:<NoGend><>:<Nom><>:<Pl><>:<St>? || $MORPH$) <+NN><NoGend>) | \ % plural noun: use Nom. Pl. for lemma
-              (([^<OLDORTH>]*<OLDORTH>:<>?<>:<+NPROP><>:<Masc><>:<Nom><>:<Sg> || $MORPH$) <+NPROP><Masc>) |\
-              (([^<OLDORTH>]*<OLDORTH>:<>?<>:<+NPROP><>:<Fem><>:<Nom><>:<Sg> || $MORPH$) <+NPROP><Fem>) |\
-              (([^<OLDORTH>]*<OLDORTH>:<>?<>:<+NPROP><>:<Neut><>:<Nom><>:<Sg> || $MORPH$) <+NPROP><Neut>) |\
-              (([^<OLDORTH>]*<OLDORTH>:<>?<>:<+NPROP><>:<NoGend><>:<Nom><>:<Sg> || $MORPH$) <+NPROP><NoGend>) |\
-              (([^<OLDORTH>]*<OLDORTH>:<>?<>:<+NPROP><>:<NoGend><>:<Nom><>:<Pl> || $MORPH$) <+NPROP><NoGend>[<Nom><Acc><Dat><Gen>]<Pl>) %plural-only names; slight overanalysis ("Ackermanns" has "Ackermann" and "Ackermanns" as possible lemmas)
+$nounlemma$ = (([^<OLDORTH>]*<OLDORTH>:<>?<>:<+NN><>:<Masc><>:<Nom><>:<Sg><>:<St>? || $MORPH$) <+NN><Masc>)
+$nounlemma$ = (([^<OLDORTH>]*<OLDORTH>:<>?<>:<+NN><>:<Fem><>:<Nom><>:<Sg><>:<St/Wk>? || $MORPH$) <+NN><Fem>) | $nounlemma$
+$nounlemma$ = (([^<OLDORTH>]*<OLDORTH>:<>?<>:<+NN><>:<Neut><>:<Nom><>:<Sg><>:<St>? || $MORPH$) <+NN><Neut>)  | $nounlemma$
+$nounlemma$ = (([^<OLDORTH>]*<OLDORTH>:<>?<>:<+NN><>:<NoGend><>:<Nom><>:<Pl><>:<St>? || $MORPH$) <+NN><NoGend>) | $nounlemma$  % plural noun: use Nom. Pl. for lemma
+$nounlemma$ = (([^<OLDORTH>]*<OLDORTH>:<>?<>:<+NPROP><>:<Masc><>:<Nom><>:<Sg> || $MORPH$) <+NPROP><Masc>) | $nounlemma$
+$nounlemma$ = (([^<OLDORTH>]*<OLDORTH>:<>?<>:<+NPROP><>:<Fem><>:<Nom><>:<Sg> || $MORPH$) <+NPROP><Fem>) | $nounlemma$
+$nounlemma$ = (([^<OLDORTH>]*<OLDORTH>:<>?<>:<+NPROP><>:<Neut><>:<Nom><>:<Sg> || $MORPH$) <+NPROP><Neut>) | $nounlemma$
+$nounlemma$ = (([^<OLDORTH>]*<OLDORTH>:<>?<>:<+NPROP><>:<NoGend><>:<Nom><>:<Sg> || $MORPH$) <+NPROP><NoGend>) | $nounlemma$
+$nounlemma$ = (([^<OLDORTH>]*<OLDORTH>:<>?<>:<+NPROP><>:<NoGend><>:<Nom><>:<Pl> || $MORPH$) <+NPROP><NoGend>[<Nom><Acc><Dat><Gen>]<Pl>) | $nounlemma$ %plural-only names; slight overanalysis ("Ackermanns" has "Ackermann" and "Ackermanns" as possible lemmas)
 
 $adverblemma$ = ([^<OLDORTH>]*<OLDORTH>:<>?<>:<+ADV> || $MORPH$) <+ADV>
 $verblemma$ = ([^<OLDORTH>]*<OLDORTH>:<>?<>:<+V><>:<Inf> || $MORPH$) <+V>
