@@ -102,6 +102,7 @@
 <ge>w<>:eis:ßs:<>e:<>n:<><VIrreg>:<VMPresSg>
 <ge>wisse:<>n:<><VIrreg>:<VMPresPl>
 <ge>wi:usse:<>n:<><VIrreg>:<VMPast>
+<ge>wi:us:ßs:<>e:<>n:<><OLDORTH><VIrreg>:<VMPast>
 <ge>wi:üsse:<>n:<><VIrreg>:<VMPastKonj>
 
 % wollen:
@@ -135,7 +136,9 @@ befe:ohle:<>n:<><VIrreg>:<VVPP-en>
 
 befleiße:<>n:<><VIrreg>:<VVPres>
 befle:<>iß:s<>:se:<>n:<><VIrreg>:<VVPastStr>
+befle:<>iße:<>n:<><OLDORTH><VIrreg>:<VVPastStr>
 befle:<>iß:s<>:se:<>n:<><VIrreg>:<VVPP-en>
+befle:<>iße:<>n:<><OLDORTH><VIrreg>:<VVPP-en>
 
 beginne:<>n:<><VIrreg>:<VVPres>
 begi:anne:<>n:<><VIrreg>:<VVPastIndStr>
@@ -145,7 +148,9 @@ begi:onne:<>n:<><VIrreg>:<VVPP-en>
 
 <ge>beiße:<>n:<><VIrreg>:<VVPres>
 <ge>be:<>iß:s<>:se:<>n:<><VIrreg>:<VVPastStr>
+<ge>be:<>iße:<>n:<><OLDORTH><VIrreg>:<VVPastStr>
 <ge>be:<>iß:s<>:se:<>n:<><VIrreg>:<VVPP-en>
+<ge>be:<>iße:<>n:<><OLDORTH><VIrreg>:<VVPP-en>
 
 <ge>berge:<>n:<><VIrreg>:<VVPres1>
 <ge>be:irge:<>n:<><VIrreg>:<VVPres2+Imp>
@@ -286,6 +291,7 @@ erschre:ocke:<>n:<><VIrreg>:<VVPP-en>
 
 <ge>esse:<>n:<><VIrreg>:<VVPres1>
 <ge>e:isse:<>n:<><VIrreg>:<VVPres2+Imp>
+<ge>e:is:ßs:<>e:<>n:<><OLDORTH><VIrreg>:<VVPres2+Imp>
 <ge>e:as:ßs:<>e:<>n:<><VIrreg>:<VVPastIndStr>
 <ge>e:äs:ßs:<>e:<>n:<><VIrreg>:<VVPastKonjStr>
 <ge><>:gesse:<>n:<><VIrreg>:<VVPP-en>
@@ -342,6 +348,7 @@ erschre:ocke:<>n:<><VIrreg>:<VVPP-en>
 
 <ge>fresse:<>n:<><VIrreg>:<VVPres1>
 <ge>fre:isse:<>n:<><VIrreg>:<VVPres2+Imp>
+<ge>fre:is:ßs:<>e:<>n:<><OLDORTH><VIrreg>:<VVPres2+Imp>
 <ge>fre:as:ßs:<>e:<>n:<><VIrreg>:<VVPastIndStr>
 <ge>fre:äs:ßs:<>e:<>n:<><VIrreg>:<VVPastKonjStr>
 <ge>fresse:<>n:<><VIrreg>:<VVPP-en>
@@ -527,6 +534,7 @@ gewi:onne:<>n:<><VIrreg>:<VVPP-en>
 
 <ge>la:is:es:ße:<>n:<><VIrreg>:<VVPastStr>
 <ge>lasse:<>n:<><VIrreg>:<VVPres1+Imp>
+<ge>las:ßs:<>e:<>n:<><OLDORTH><VIrreg>:<VVPres1+Imp>
 <ge>la:ässe:<>n:<><VIrreg>:<VVPres2>
 <ge>lasse:<>n:<><VIrreg>:<VVPP-en>
 
@@ -584,6 +592,7 @@ gewi:onne:<>n:<><VIrreg>:<VVPP-en>
 
 <ge>messe:<>n:<><VIrreg>:<VVPres1>
 <ge>me:isse:<>n:<><VIrreg>:<VVPres2+Imp>
+<ge>me:is:ßs:<>e:<>n:<><OLDORTH><VIrreg>:<VVPres2+Imp>
 <ge>me:as:ßs:<>e:<>n:<><VIrreg>:<VVPastIndStr>
 <ge>me:äs:ßs:<>e:<>n:<><VIrreg>:<VVPastKonjStr>
 <ge>messe:<>n:<><VIrreg>:<VVPP-en>
@@ -631,7 +640,9 @@ missli:unge:<>n:<><VIrreg>:<VVPP-en>
 
 <ge>reiße:<>n:<><VIrreg>:<VVPres>
 <ge>re:<>iß:s<>:se:<>n:<><VIrreg>:<VVPastStr>
+<ge>re:<>iße:<>n:<><OLDORTH><VIrreg>:<VVPastStr>
 <ge>re:<>iß:s<>:se:<>n:<><VIrreg>:<VVPP-en>
+<ge>re:<>iße:<>n:<><OLDORTH><VIrreg>:<VVPP-en>
 
 <ge>reite:<>n:<><VIrreg>:<VVPres>
 <ge>re:<>it<>:te:<>n:<><VIrreg>:<VVPastStr>
@@ -713,10 +724,10 @@ missli:unge:<>n:<><VIrreg>:<VVPP-en>
 
 <ge>schieße:<>n:<><VIrreg>:<VVPres>
 <ge>schi:oe:<>ß:s<>:se:<>n:<><VIrreg>:<VVPastIndStr>
+<ge>schi:oe:<>ße:<>n:<><OLDORTH><VIrreg>:<VVPastIndStr>
 <ge>schi:öe:<>ß:s<>:se:<>n:<><VIrreg>:<VVPastKonjStr>
-<ge>schli:oe:<>ß:s<>:se:<>n:<><VIrreg>:<VVPastIndStr>
-<ge>schli:öe:<>ß:s<>:se:<>n:<><VIrreg>:<VVPastKonjStr>
 <ge>schi:oe:<>ß:s<>:se:<>n:<><VIrreg>:<VVPP-en>
+<ge>schi:oe:<>ße:<>n:<><OLDORTH><VIrreg>:<VVPP-en>
 
 <ge>schinde:<>n:<><VIrreg>:<VVPres>
 <ge>schi:unde:<>n:<><VIrreg>:<VVPastIndStr>
@@ -743,7 +754,11 @@ missli:unge:<>n:<><VIrreg>:<VVPP-en>
 <ge>schle:<>if<>:fe:<>n:<><VIrreg>:<VVPP-en>
 
 <ge>schließe:<>n:<><VIrreg>:<VVPres>
-<ge>schli:oß:s<>:se:<>n:<><VIrreg>:<VVPP-en>
+<ge>schli:oe:<>ß:s<>:se:<>n:<><VIrreg>:<VVPP-en>
+<ge>schli:oe:<>ß:s<>:se:<>n:<><VIrreg>:<VVPastIndStr>
+<ge>schli:oe:<>ße:<>n:<><OLDORTH><VIrreg>:<VVPastIndStr>
+<ge>schli:öe:<>ß:s<>:se:<>n:<><VIrreg>:<VVPastKonjStr>
+<ge>schli:oe:<>ße:<>n:<><OLDORTH><VIrreg>:<VVPP-en>
 
 <ge>schlinge:<>n:<><VIrreg>:<VVPres>
 <ge>schli:ange:<>n:<><VIrreg>:<VVPastIndStr>
@@ -752,7 +767,9 @@ missli:unge:<>n:<><VIrreg>:<VVPP-en>
 
 <ge>schmeiße:<>n:<><VIrreg>:<VVPres>
 <ge>schme:<>iß:s<>:se:<>n:<><VIrreg>:<VVPastStr>
+<ge>schme:<>iße:<>n:<><OLDORTH><VIrreg>:<VVPastStr>
 <ge>schme:<>iß:s<>:se:<>n:<><VIrreg>:<VVPP-en>
+<ge>schme:<>iße:<>n:<><OLDORTH><VIrreg>:<VVPP-en>
 
 <ge>schmelze:<>n:<><VIrreg>:<VVPres1>
 <ge>schme:ilze:<>n:<><VIrreg>:<VVPres2+Imp>
@@ -988,6 +1005,7 @@ verdri:oe:<>ß:s<>:se:<>n:<><VIrreg>:<VVPP-en>
 
 vergesse:<>n:<><VIrreg>:<VVPres1>
 verge:isse:<>n:<><VIrreg>:<VVPres2+Imp>
+verge:is:ßs:<>e:<>n:<><OLDORTH><VIrreg>:<VVPres2+Imp>
 verge:as:ßs:<>e:<>n:<><VIrreg>:<VVPastIndStr>
 verge:äs:ßs:<>e:<>n:<><VIrreg>:<VVPastKonjStr>
 vergesse:<>n:<><VIrreg>:<VVPP-en>
