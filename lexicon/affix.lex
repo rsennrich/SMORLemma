@@ -41,6 +41,7 @@
 <Prefix><no-ge>um<PREF><V><nativ>
 <Prefix><no-ge>unter<PREF><V><nativ>
 <Prefix><no-ge>ver<PREF><V><nativ>
+<Prefix><no-ge>wider<PREF><V><nativ>
 <Prefix><no-ge>wieder<PREF>ver<PREF><V><nativ>
 <Prefix><no-ge>zer<PREF><V><nativ>
 <Prefix><no-ge>zirkum<PREF><V><klassisch>
@@ -440,7 +441,6 @@
 <Prefix>weit<PREF><V><nativ>
 <Prefix>weiter<PREF><V><nativ>
 <Prefix>wider<PREF><NN><nativ>
-<Prefix>wider<PREF><V><nativ>
 <Prefix>wieder<PREF><V><nativ>
 <Prefix>wieder<PREF>ab<PREF><V><nativ>
 <Prefix>wieder<PREF>an<PREF><V><nativ>
