@@ -178,6 +178,11 @@ bewe:oge:<>n:<><VIrreg>:<VVPP-en>
 <ge>bi:öe:<>te:<>n:<><VIrreg>:<VVPastKonjStr>
 <ge>bi:oe:<>te:<>n:<><VIrreg>:<VVPP-en>
 
+gebiete:<>n:<><VIrreg>:<VVPres>
+gebi:oe:<>te:<>n:<><VIrreg>:<VVPastIndStr>
+gebi:öe:<>te:<>n:<><VIrreg>:<VVPastKonjStr>
+gebi:oe:<>te:<>n:<><VIrreg>:<VVPP-en>
+
 <ge>binde:<>n:<><VIrreg>:<VVPres>
 <ge>bi:ande:<>n:<><VIrreg>:<VVPastIndStr>
 <ge>bi:ände:<>n:<><VIrreg>:<VVPastKonjStr>
@@ -222,6 +227,12 @@ bewe:oge:<>n:<><VIrreg>:<VVPP-en>
 <ge>de:an:ck:he:<>n:<><VIrreg>:<VVPastIndReg>
 <ge>de:än:ck:he:<>n:<><VIrreg>:<VVPastKonjReg>
 <ge>de:an:ck:he:<>n:<><VIrreg>:<VVPP-t>
+
+gedenke:<>n:<><VIrreg>:<VVPres>
+gede:an:ck:he:<>n:<><VIrreg>:<VVPastIndReg>
+gede:än:ck:he:<>n:<><VIrreg>:<VVPastKonjReg>
+gede:an:ck:he:<>n:<><VIrreg>:<VVPP-t>
+
 
 <ge>dinge:<>n:<><VIrreg>:<VVPres>
 <ge>dinge:<>n:<><VIrreg>:<VVPastIndReg>
@@ -581,6 +592,11 @@ behalte:<>n:<><VIrreg>:<VVPP-en>
 <ge>li:ae:<>ge:<>n:<><VIrreg>:<VVPastIndStr>
 <ge>li:äe:<>ge:<>n:<><VIrreg>:<VVPastKonjStr>
 <ge>li:<>ege:<>n:<><VIrreg>:<VVPP-en>
+
+obliege:<>n:<><VIrreg>:<VVPres>
+obli:ae:<>ge:<>n:<><VIrreg>:<VVPastIndStr>
+obli:äe:<>ge:<>n:<><VIrreg>:<VVPastKonjStr>
+obli:<>ege:<>n:<><VIrreg>:<VVPP-en>
 
 <ge>lüge:<>n:<><VIrreg>:<VVPres>
 <ge>lü:oge:<>n:<><VIrreg>:<VVPastIndStr>
@@ -1035,6 +1051,11 @@ verli:oe:<>re:<>n:<><VIrreg>:<VVPP-en>
 verschleiße:<>n:<><VIrreg>:<VVPres>
 verschle:<>iß:s<>:se:<>n:<><VIrreg>:<VVPastStr>
 verschle:<>iß:s<>:se:<>n:<><VIrreg>:<VVPP-en>
+
+vollziehe:<>n:<><VIrreg>:<VVPres>
+vollzi:oe:gh:<>e:<>n:<><VIrreg>:<VVPastIndStr>
+vollzi:öe:gh:<>e:<>n:<><VIrreg>:<VVPastKonjStr>
+vollzi:oe:gh:<>e:<>n:<><VIrreg>:<VVPP-en>
 
 <ge>wachse:<>n:<><VIrreg>:<VVPres1+Imp>
 <ge>wa:ächse:<>n:<><VIrreg>:<VVPres2>
