@@ -253,6 +253,7 @@ s:<>i<>:h<>:re<>:r<+PPRO><Pers><3><Pl><NoGend><Gen><Wk>
 s:<>i<>:h<>:ne<>:n<+PPRO><Pers><3><Pl><NoGend><Dat><Wk>
 sie:c<>:h<+PPRO><Refl><3><Pl><NoGend><DA><Wk>
 einander<+PPRO><Rec><Invar>
+voneinander<+PPRO><Rec><Invar>
 di:<>e<>:r<+DEM><Subst><Masc><Nom><Sg><St>
 di:<>e<>:n<+DEM><Subst><Masc><Acc><Sg><St>
 di:ae:s<+DEM><Subst><Neut><NA><Sg><St>
@@ -497,6 +498,7 @@ unsereine<>:n<+INDEF><Subst><Masc><Acc><Sg><St>
 unsereine<+INDEF><Subst><Fem><NA><Sg><St>
 unsereine<>:r<+INDEF><Subst><Fem><GD><Sg><St>
 unsereins<+INDEF><Subst><Neut><NGDA><Sg><St>
+allesamt<+INDEF><Subst><Invar>
 etwas<+INDEF><Subst><Invar>
 sowas<+INDEF><Subst><Invar>
 irgendetwas<+INDEF><Subst><Invar>
@@ -529,6 +531,7 @@ etwas<+INDEF><Attr><Invar>
 manch<+INDEF><Attr><Invar>
 solch<+INDEF><Attr><Invar>
 so<+INDEF><Attr><Invar>
+allerhand<+INDEF><Pro><Invar>
 allerlei<+INDEF><Pro><Invar>
 anderlei<+INDEF><Pro><Invar>
 beiderlei<+INDEF><Pro><Invar>
