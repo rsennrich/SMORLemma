@@ -47,3 +47,13 @@ viel<AdjPos>
 v:mi:ee:hl:r<AdjComp>
 v:mi:ee:il:<><AdjSup>
 
+
+% ==============================================================================
+% other irregular forms
+% ==============================================================================
+
+% different adverb form, but we overgenerate for simplicity
+
+besondere:<><Adj+>
+ober<Adj+>
+unter<Adj+>

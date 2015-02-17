@@ -58,6 +58,10 @@
 <Prefix>agri<PREF><ADJ><klassisch>
 <Prefix>agri<PREF><NN><klassisch>
 <Prefix>aller<PREF><ADJ><frei,fremd,nativ>
+<Prefix>ambi<PREF><ADJ><fremd,klassisch>
+<Prefix>ambi<PREF><NN><fremd,klassisch>
+<Prefix>amphi<PREF><ADJ><fremd,klassisch>
+<Prefix>amphi<PREF><NN><fremd,klassisch>
 <Prefix>an<PREF><V><nativ>
 <Prefix>aneinander<PREF><V><nativ>
 <Prefix>anheim<PREF><V><nativ>
@@ -72,6 +76,10 @@
 <Prefix>aufwärts<PREF><V><nativ>
 <Prefix>aus<PREF><V><nativ>
 <Prefix>auseinander<PREF><V><nativ>
+<Prefix>auto<PREF><ADJ><fremd,klassisch>
+<Prefix>auto<PREF><NN><fremd,klassisch>
+<Prefix>außen<PREF><ADJ><klassisch,nativ>
+<Prefix>außen<PREF><NN><klassisch,nativ>
 <Prefix>außer<PREF><ADJ><klassisch,nativ>
 <Prefix>außer<PREF><NN><klassisch,nativ>
 <Prefix>bei<PREF><V><nativ>
@@ -90,6 +98,8 @@
 <Prefix>binnen<PREF><NN><klassisch,nativ>
 <Prefix>blank<PREF><V><nativ>
 <Prefix>breit<PREF><V><nativ>
+<Prefix>cyber<PREF><ADJ><fremd,klassisch>
+<Prefix>cyber<PREF><NN><fremd,klassisch>
 <Prefix>da<PREF><V><nativ>
 <Prefix>dabei<PREF><V><nativ>
 <Prefix>dagegen<PREF><V><nativ>
@@ -139,6 +149,8 @@
 <Prefix>ein<PREF><V><nativ>
 <Prefix>einher<PREF><V><nativ>
 <Prefix>empor<PREF><V><nativ>
+<Prefix>endo<PREF><ADJ><fremd,klassisch>
+<Prefix>endo<PREF><NN><fremd,klassisch>
 <Prefix>entgegen<PREF><V><nativ>
 <Prefix>entlang<PREF><V><nativ>
 <Prefix>entzwei<PREF><V><nativ>
@@ -147,6 +159,8 @@
 <Prefix>ex<PREF><ADJ><klassisch>
 <Prefix>ex<PREF><NN><klassisch,nativ>
 <Prefix>ex<PREF><V><nativ>
+<Prefix>exo<PREF><ADJ><fremd,klassisch>
+<Prefix>exo<PREF><NN><fremd,klassisch>
 <Prefix>falsch<PREF><V><nativ>
 <Prefix>fehl<PREF><V><nativ>
 <Prefix>feil<PREF><V><nativ>
@@ -175,6 +189,8 @@
 <Prefix>gut<PREF><V><nativ>
 <Prefix>heim<PREF><V><nativ>
 <Prefix>heiß<PREF><V><nativ>
+<Prefix>hemi<PREF><ADJ><fremd,klassisch>
+<Prefix>hemi<PREF><NN><fremd,klassisch>
 <Prefix>her<PREF><V><nativ>
 <Prefix>herab<PREF><V><nativ>
 <Prefix>heran<PREF><V><nativ>
@@ -230,6 +246,8 @@
 <Prefix>infra<PREF><NN><klassisch>
 <Prefix>infrage<PREF><V><nativ>
 <Prefix>inne<PREF><V><nativ>
+<Prefix>innen<PREF><ADJ><klassisch,nativ>
+<Prefix>innen<PREF><NN><klassisch,nativ>
 <Prefix>inner<PREF><ADJ><klassisch,nativ>
 <Prefix>inner<PREF><NN><klassisch,nativ>
 <Prefix>instand<PREF><V><nativ>
@@ -310,6 +328,8 @@
 <Prefix>mit<PREF>weg<PREF><V><nativ>
 <Prefix>mit<PREF>über<PREF><V><nativ>
 <Prefix>mit<PREF>überein<PREF><V><nativ>
+<Prefix>mono<PREF><ADJ><fremd,klassisch>
+<Prefix>mono<PREF><NN><fremd,klassisch>
 <Prefix>multi<PREF><ADJ><fremd,klassisch,nativ>
 <Prefix>multi<PREF><NN><fremd,klassisch,nativ>
 <Prefix>nach<PREF><ADJ><fremd,klassisch,nativ>
@@ -322,6 +342,8 @@
 <Prefix>neben<PREF><V><klassisch,nativ>
 <Prefix>nebeneinander<PREF><V><nativ>
 <Prefix>nebenher<PREF><V><nativ>
+<Prefix>neo<PREF><ADJ><fremd,klassisch>
+<Prefix>neo<PREF><NN><fremd,klassisch>
 <Prefix>neu<PREF><V><nativ>
 <Prefix>nicht<PREF><ADJ><fremd,klassisch,nativ>
 <Prefix>nicht<PREF><NN><fremd,klassisch,nativ>
@@ -339,6 +361,10 @@
 <Prefix>offen<PREF><V><nativ>
 <Prefix>oligo<PREF><ADJ><fremd,klassisch>
 <Prefix>oligo<PREF><NN><fremd,klassisch>
+<Prefix>omni<PREF><ADJ><fremd,klassisch>
+<Prefix>omni<PREF><NN><fremd,klassisch>
+<Prefix>ortho<PREF><ADJ><fremd,klassisch>
+<Prefix>ortho<PREF><NN><fremd,klassisch>
 <Prefix>pan<PREF><ADJ><klassisch>
 <Prefix>pan<PREF><NN><fremd>
 <Prefix>pan<PREF><NN><klassisch>
@@ -391,6 +417,8 @@
 <Prefix>schön<PREF><V><nativ>
 <Prefix>seitwärts<PREF><NN><nativ>
 <Prefix>seitwärts<PREF><V><nativ>
+<Prefix>semi<PREF><ADJ><fremd,klassisch>
+<Prefix>semi<PREF><NN><fremd,klassisch>
 <Prefix>sicher<PREF><V><nativ>
 <Prefix>spazieren<PREF><V><nativ>
 <Prefix>stand<PREF><V><nativ>
@@ -416,6 +444,7 @@
 <Prefix>tran<PREF><NN><klassisch>
 <Prefix>trans<PREF><ADJ><klassisch>
 <Prefix>trans<PREF><NN><klassisch>
+<Prefix>tri<PREF><NN><fremd,klassisch>
 <Prefix>trocken<PREF><V><nativ>
 <Prefix>ultra<PREF><ADJ><fremd,klassisch,nativ>
 <Prefix>ultra<PREF><NN><fremd,klassisch,nativ>
@@ -423,12 +452,14 @@
 <Prefix>umher<PREF><V><nativ>
 <Prefix>umhin<PREF><V><nativ>
 <Prefix>un<PREF><ADJ><fremd,klassisch,nativ>
+<Prefix>un<PREF><NN><fremd,klassisch,nativ>
 <Prefix>unten<PREF><V><nativ>
 <Prefix>unter<PREF><ADJ><fremd,klassisch,nativ>
 <Prefix>unter<PREF><NN><fremd,klassisch,nativ>
 <Prefix>unter<PREF><NPROP><fremd,klassisch,nativ>
 <Prefix>unter<PREF><V><nativ>
 <Prefix>untereinander<PREF><V><nativ>
+<Prefix>ur<PREF><ADJ><nativ>
 <Prefix>ur<PREF><NN><nativ>
 <Prefix>vize<PREF><NN><fremd,klassisch,nativ>
 <Prefix>voll<PREF><V><nativ>
@@ -487,6 +518,8 @@
 <Prefix>zuvor<PREF><V><nativ>
 <Prefix>zwischen<PREF><NN><nativ>
 <Prefix>zwischen<PREF><V><nativ>
+<Prefix>äqui<PREF><ADJ><fremd,klassisch>
+<Prefix>äqui<PREF><NN><fremd,klassisch>
 <Prefix>über<PREF><ADJ><fremd,klassisch,nativ>
 <Prefix>über<PREF><NN><fremd,klassisch,nativ>
 <Prefix>über<PREF><V><nativ>
