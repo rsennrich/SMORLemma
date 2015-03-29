@@ -21,7 +21,7 @@ $ANY2$ = .*
 $ANY$ = (.|<ge>)*
 
 $bdk$ = [#stemtype#]
-$klassisch$ = [<frei><gebunden><kurz><lang><lang2>]
+$klassisch$ = [<frei><gebunden><kurz><lang><lang2><klassisch>]
 $NS$ = [<nativ> #Nom-class#]
 
 % prefixes like "ver" delete the <ge> marker and generate a pseudo stem.
