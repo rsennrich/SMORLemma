@@ -13,7 +13,7 @@
 %**************************************************************************
 
 ALPHABET = [#char# #entry-type# #stemtype# #origin# #complexity# #category-KSF#\
-  #inflection# #Nom-class# #surface-trigger# #deko-trigger#]\
+  #inflection# #Nom-class# #surface-trigger# #deko-trigger# #morpheme_boundary_marker#]\
   <FB><I><Ge-Nom><UL><QUANT><SS><ge>\
   [#cap-trigger# #orth-trigger# <Old><X><F><PREF><SUFF><VPREF>]:<>\
   <KSF>:<NN> <VPART>:<zu>\

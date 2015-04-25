@@ -8,8 +8,8 @@
 
 #include "symbols.fst"
 
-$X$ = [#char# #entry-type# #stemtype# #origin# #complexity# #category-KSF# \
-	#Nom-class# #inflection# #surface-trigger# #deko-trigger#] \
+$X$ = [#char# #entry-type# #stemtype# #origin# #complexity# #category-KSF#  \
+	#Nom-class# #inflection# #surface-trigger# #deko-trigger# #morpheme_boundary_marker#] \
 	<FB><I><Ge-Nom><UL><QUANT><zu><ge>
 
 ALPHABET = $X$ <SS><OLDORTH><NEWORTH> e:<e>
