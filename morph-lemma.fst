@@ -42,8 +42,10 @@ $special_lemmatisation$ = [<+V><+NN><+ADJ><+ADV><+NPROP>]
 %we want to keep ambiguity marker for derivations, and only delete it at the end (before the part-of-speech)
 $ambiguity_fix$ = .* (<>:<ambig-e-elisionVerb><+V>)? .*
 
-$MORPH$ = ((^_$Lemmatizer$).* || $ambiguity_fix$ || $MORPH$ || $remove_CB_from_surface$) |\
-(.*([#part-of-speech#]-$special_lemmatisation$).* || $MORPH$ || $remove_CB_from_surface$) % forms without special lemmatisation
+$MORPH1$ = ((^_$Lemmatizer$).* || $ambiguity_fix$ || $MORPH$ || $remove_CB_from_surface$)
+$MORPH2$ = (.*([#part-of-speech#]-$special_lemmatisation$).* || $MORPH$ || $remove_CB_from_surface$) % forms without special lemmatisation
+$MORPH$ = $MORPH1$ | $MORPH2$
+
 
 %remove <St/Wk> for backward compatibility with SMOR grammar (was inserted to identify/lemmatise nouns derived from adjectives)
 [^<St/Wk>]* (<>:<St/Wk> | [^<St/Wk>]) || $MORPH$
