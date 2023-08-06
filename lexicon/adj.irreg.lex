@@ -57,3 +57,4 @@ v:mi:ee:il:<><AdjSup>
 besondere:<><Adj+>
 ober<Adj+>
 unter<Adj+>
+inner<Adj+>

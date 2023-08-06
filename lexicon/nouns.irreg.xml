@@ -37,19 +37,12 @@
                 <Origin>fremd</Origin>
                 <InfClass>NMasc/Pl</InfClass>
         </BaseStem>
-<!-- nouns with adjective declination. Currently not handled by Zmorge -->
+<!-- West listed as uninflected noun. Adding as singular noun so compounds work -->
          <BaseStem>
-                <Lemma>Beamte</Lemma>
-                <Stem>Beamte</Stem>
+                <Lemma>West</Lemma>
+                <Stem>West</Stem>
                 <Pos>NN</Pos>
                 <Origin>nativ</Origin>
-                <InfClass>NMasc-Adj</InfClass>
-        </BaseStem>
-         <BaseStem>
-                <Lemma>Gefreite</Lemma>
-                <Stem>Gefreite</Stem>
-                <Pos>NN</Pos>
-                <Origin>nativ</Origin>
-                <InfClass>NMasc-Adj</InfClass>
+                <InfClass>NMasc/Sg_0</InfClass>
         </BaseStem>
 </smor>
