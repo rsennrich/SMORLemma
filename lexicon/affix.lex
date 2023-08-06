@@ -220,7 +220,7 @@
 <Prefix>hintenrunter<PREF><V><nativ>
 <Prefix>hinter<PREF><ADJ><nativ>
 <Prefix>hinter<PREF><NN><nativ>
-<Prefix>hinter<PREF><V><nativ>
+<Prefix><no-ge>hinter<PREF><V><nativ>
 <Prefix>hinterdrein<PREF><V><nativ>
 <Prefix>hintereinander<PREF><V><nativ>
 <Prefix>hinterher<PREF><V><nativ>
