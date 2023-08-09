@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%  File:         smor-uc.fst
+%  File:         morph-lemma.fst
 %  Author:       Rico Sennrich
 %  Date:         Februar 2013
 %  Content:      Use infinitive, nominative singular, and other canonical base forms as lemmas (instead of derivational analysis)
@@ -30,11 +30,12 @@ $nounlemma$ = (([^<OLDORTH>]*<OLDORTH>:<>?<>:<+NPROP><>:<NoGend><>:<Nom><>:<Pl> 
 
 $adverblemma$ = ([^<OLDORTH>]*<OLDORTH>:<>?<>:<+ADV> || $MORPH$) <+ADV>
 $verblemma$ = ([^<OLDORTH>]*<OLDORTH>:<>?<>:<+V><>:<Inf> || $MORPH$) <+V>
-$adjectivelemma$ = ([^<OLDORTH>]*<OLDORTH>:<>?<>:<+ADJ><>:<Pos><>:[<Adv><Invar><Pred>] || $MORPH$) <+ADJ>
+$adjectivelemma$ = ([^<OLDORTH>]*<OLDORTH>:<>?<>:<+ADJ><>:<Pos><>:[<Adv><Pred>] || $MORPH$) <+ADJ>
 
-$Lemmatizer$ = $adverblemma$ | $nounlemma$ | $verblemma$ | $adjectivelemma$
-
-$Lemmatizer$ = $Lemmatizer$ || $remove_final_CB$
+$Lemmatizer_nn$ = $nounlemma$ || $remove_final_CB$
+$Lemmatizer_adv$ = $adverblemma$ || $remove_final_CB$
+$Lemmatizer_v$ = $verblemma$ || $remove_final_CB$
+$Lemmatizer_adj$ = $adjectivelemma$ || $remove_final_CB$
 
 $special_lemmatisation$ = [<+V><+NN><+ADJ><+ADV><+NPROP>]
 
@@ -42,10 +43,25 @@ $special_lemmatisation$ = [<+V><+NN><+ADJ><+ADV><+NPROP>]
 %we want to keep ambiguity marker for derivations, and only delete it at the end (before the part-of-speech)
 $ambiguity_fix$ = .* (<>:<ambig-e-elisionVerb><+V>)? .*
 
-$MORPH1$ = ((^_$Lemmatizer$).* || $ambiguity_fix$ || $MORPH$ || $remove_CB_from_surface$)
-$MORPH2$ = (.*([#part-of-speech#]-$special_lemmatisation$).* || $MORPH$ || $remove_CB_from_surface$) % forms without special lemmatisation
-$MORPH$ = $MORPH1$ | $MORPH2$
+$MORPH$ = $MORPH$ || $remove_CB_from_surface$
 
+% get lemmatisation by (expensive) composition of transducer with (almost) reverse of itself.
+% first transducer (Lemmatiser) goes from lemma to derivational analysis
+% second transducer (MORPH) goes from derivational analysis to surface form
+$MORPH_lemmatise_nn$ = ((^_$Lemmatizer_nn$).* || $ambiguity_fix$ || $MORPH$)
+$MORPH_lemmatise_adv$ = ((^_$Lemmatizer_adv$).* || $ambiguity_fix$ || $MORPH$)
+$MORPH_lemmatise_v$ = ((^_$Lemmatizer_v$).* || $ambiguity_fix$ || $MORPH$)
+$MORPH_lemmatise_adj$ = ((^_$Lemmatizer_adj$).* || $ambiguity_fix$ || $MORPH$)
+
+% no need to apply this trick to parts of speech that are invariant anyway
+$MORPH_nolemmatise$ = (.*([#part-of-speech#]-$special_lemmatisation$).* || $MORPH$)
+
+% skip standard lemmatisation step for invariant adjectives (derived from proper nouns and numbers) to reduce compilation cost
+% remove e from stem because all relevant suffixes start with e
+% note: this rule currently doesn't handle complex forms like "Ober<#>hausen<~>er"
+$MORPH_adj_invariant$ = [#char#]* (<>:e|[^e]) <~>:[<CARD><ORD><NPROP>] [#char#]* <>:<SUFF><+ADJ><Pos><Invar> || $MORPH$
+
+$MORPH$ = $MORPH_lemmatise_nn$ | $MORPH_lemmatise_adv$ | $MORPH_lemmatise_v$ | $MORPH_lemmatise_adj$ | $MORPH_nolemmatise$ | $MORPH_adj_invariant$
 
 %remove <St/Wk> for backward compatibility with SMOR grammar (was inserted to identify/lemmatise nouns derived from adjectives)
 [^<St/Wk>]* (<>:<St/Wk> | [^<St/Wk>]) || $MORPH$
